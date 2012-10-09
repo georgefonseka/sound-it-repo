@@ -9,6 +9,8 @@ import android.media.MediaPlayer;
 import android.media.MediaRecorder;
 import android.os.Bundle;
 import android.os.Environment;
+import android.speech.tts.TextToSpeech;
+import android.speech.tts.TextToSpeech.OnInitListener;
 import android.support.v4.app.NavUtils;
 import android.util.Log;
 import android.view.Menu;
@@ -18,7 +20,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
-public class Recording extends Activity {
+public class Recording extends Activity implements OnInitListener {
 	
     private static final String LOG_TAG = "AudioRecordTest";
     private static String mFileName = null;
@@ -28,6 +30,8 @@ public class Recording extends Activity {
 
     private PlayButton   mPlayButton = null;
     private MediaPlayer   mPlayer = null;
+    
+    TextToSpeech talker;
 
 //    @Override
 //    public void onCreate(Bundle savedInstanceState) {
@@ -39,11 +43,15 @@ public class Recording extends Activity {
     public Recording() {
         mFileName = Environment.getExternalStorageDirectory().getAbsolutePath();
         mFileName += "/audiorecordtest.3gp";
+        
+        Log.e(LOG_TAG, "filename: " + mFileName);
     }
     
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
+        
+        talker = new TextToSpeech(this, this);
 
         LinearLayout ll = new LinearLayout(this);
         mRecordButton = new RecordButton(this);
@@ -198,5 +206,10 @@ public class Recording extends Activity {
             mPlayer = null;
         }
     }
+
+	public void onInit(int status) {
+		talker.speak("George is the best. George is really amazing.",
+				TextToSpeech.QUEUE_FLUSH, null);
+	}
 
 }
