@@ -19,40 +19,36 @@ public final class R {
         public static final int btnDog=0x7f080000;
         public static final int btnFromGeorge=0x7f080002;
         public static final int btnFromShu=0x7f080003;
-        public static final int btnGeorge=0x7f080005;
-        public static final int btnGuess=0x7f08000b;
-        public static final int btnPlay=0x7f08000a;
-        public static final int btnReplay=0x7f08000e;
-        public static final int btnReplayFriendSound=0x7f080007;
-        public static final int btnSend=0x7f08000f;
-        public static final int btnShu=0x7f080006;
-        public static final int btnTuto=0x7f08000c;
-        public static final int btn_submit=0x7f080009;
-        public static final int button1=0x7f08000d;
-        public static final int custom_font=0x7f080004;
-        public static final int edit_message=0x7f080008;
-        public static final int menu_settings=0x7f080010;
+        public static final int btnGeorge=0x7f080004;
+        public static final int btnGuess=0x7f08000a;
+        public static final int btnPlay=0x7f080009;
+        public static final int btnReplay=0x7f08000d;
+        public static final int btnReplayFriendSound=0x7f080006;
+        public static final int btnSend=0x7f08000e;
+        public static final int btnShu=0x7f080005;
+        public static final int btnTuto=0x7f08000b;
+        public static final int btn_submit=0x7f080008;
+        public static final int button1=0x7f08000c;
+        public static final int edit_message=0x7f080007;
+        public static final int menu_settings=0x7f08000f;
     }
     public static final class layout {
         public static final int activity_chooes_asound=0x7f030000;
         public static final int activity_choose_afriend=0x7f030001;
-        public static final int activity_everything_demo=0x7f030002;
-        public static final int activity_friend_list=0x7f030003;
-        public static final int activity_guess_sound_page=0x7f030004;
-        public static final int activity_main=0x7f030005;
-        public static final int activity_recording=0x7f030006;
-        public static final int activity_send_friend=0x7f030007;
-        public static final int custom_font=0x7f030008;
+        public static final int activity_friend_list=0x7f030002;
+        public static final int activity_guess_sound_page=0x7f030003;
+        public static final int activity_main=0x7f030004;
+        public static final int activity_recording=0x7f030005;
+        public static final int activity_send_friend=0x7f030006;
     }
     public static final class menu {
         public static final int activity_chooes_asound=0x7f070000;
         public static final int activity_choose_afriend=0x7f070001;
-        public static final int activity_everything_demo=0x7f070002;
-        public static final int activity_friend_list=0x7f070003;
-        public static final int activity_guess_sound_page=0x7f070004;
-        public static final int activity_main=0x7f070005;
-        public static final int activity_recording=0x7f070006;
-        public static final int activity_send_friend=0x7f070007;
+        public static final int activity_friend_list=0x7f070002;
+        public static final int activity_guess_sound_page=0x7f070003;
+        public static final int activity_main=0x7f070004;
+        public static final int activity_recording=0x7f070005;
+        public static final int activity_send_friend=0x7f070006;
     }
     public static final class raw {
         public static final int testing_voicein_homepage=0x7f040000;
