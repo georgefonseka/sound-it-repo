@@ -12,9 +12,18 @@ public class GuessSoundPage extends Activity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        
+    	
+    	Intent intent = new Intent(GuessSoundPage.this,yypService.class);  
+    	startService(intent); 
+    	
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_guess_sound_page);
-        // getActionBar().setDisplayHomeAsUpEnabled(true);
+        //getActionBar().setDisplayHomeAsUpEnabled(true);
+        
+        
+        
+        
     }
 
     @Override
@@ -38,5 +47,13 @@ public class GuessSoundPage extends Activity {
     	Intent intent = new Intent(this, MainActivity.class);
     	startActivity(intent);
     }
+    
+	@Override
+	protected void onStop() {
+		// TODO Auto-generated method stub
+		Intent intent = new Intent(GuessSoundPage.this,yypService.class);
+		stopService(intent);
+		super.onStop();
+	}
 
 }
