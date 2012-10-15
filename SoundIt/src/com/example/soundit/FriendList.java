@@ -37,7 +37,7 @@ public class FriendList extends Activity {
     public void goBackHome(View view) {
         // Do something in response to button
     	Intent intent = new Intent(this, MainActivity.class);
-    	startActivity(intent);
+    	startActivity(intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
     }
 
     

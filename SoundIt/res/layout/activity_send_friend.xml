@@ -10,7 +10,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:text="@string/replay_or_send_re" />
+        android:text="@string/replay_or_send_re" 
+        android:onClick="replay" />
 
     <Button
         android:id="@+id/btnSend"

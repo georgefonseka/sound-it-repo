@@ -6,7 +6,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.media.MediaRecorder;
 import android.os.Bundle;
-import android.os.Environment;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
@@ -15,7 +14,6 @@ import android.widget.Button;
 public class Recording extends Activity {
 	
     private static final String LOG_TAG = "Recording";
-    private static String mFileName = null;
 
     private MediaRecorder mRecorder = null;
     private boolean mRecording;
@@ -25,10 +23,6 @@ public class Recording extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        
-        mFileName = Environment.getExternalStorageDirectory().getAbsolutePath();
-        mFileName += "/soundit-audio.3gp";
-        Log.d(LOG_TAG, "filename: " + mFileName);
         
         setContentView(R.layout.activity_recording);
         
@@ -57,7 +51,7 @@ public class Recording extends Activity {
         mRecorder = new MediaRecorder();
         mRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
         mRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
-        mRecorder.setOutputFile(mFileName);
+        mRecorder.setOutputFile(ApplicationProperties.getInstance().getSoundFileName());
         mRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
         try {
         	Log.d(LOG_TAG, "prepare media recorder.");

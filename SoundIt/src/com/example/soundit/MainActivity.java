@@ -73,7 +73,7 @@ public class MainActivity extends Activity implements OnInitListener{
 	    		tts = null;
 	    	}
 	    	
-	    	ApplicationProperties.getInstance().getProperties().clear();
+	    	//ApplicationProperties.getInstance().getProperties().clear();
 	    	
 	    	super.onDestroy();
 	 }
