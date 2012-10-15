@@ -1,36 +1,46 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content" >
-
-    <Button
-        android:id="@+id/btnPlay"
-        android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+	
+	<Button
+        android:id="@+id/imageButtonSelector"
+        android:layout_width="400dp"
         android:layout_height="200dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:text="@string/home_play" 
-        android:onClick="goToPlay"/>
-
+        android:layout_gravity="center"
+        android:text="Play"
+        android:textSize="80dp"
+        android:textColor="#00adee"
+        android:gravity="center"
+        android:paddingLeft="100dp"
+        android:background="@drawable/my_btn"
+        android:onClick="goToPlay"
+         />
+      
     <Button
-        android:id="@+id/btnGuess"
-        android:layout_width="wrap_content"
+        android:id="@+id/guessing_btn"
+        android:layout_width="400dp"
         android:layout_height="200dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/btnPlay"
-        android:text="@string/home_guess"
+        android:layout_gravity="center"
+        android:text="Guess"
+        android:textSize="80dp"
+        android:textColor="#00adee"
+        android:gravity="center"
+        android:paddingLeft="60dp"
+        android:background="@drawable/my_btn"
         android:onClick="goToGuess" />
 
     <Button
-        android:id="@+id/btnTuto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/btnGuess"
+        android:id="@+id/tutorial_btn"
+        android:layout_width="400dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:textSize="80dp"
+        android:textColor="#ffffff"
+        android:gravity="center"
+        android:paddingLeft="60dp"
+        android:background="@drawable/my_btn"
         android:text="@string/home_tutorial" />
 
-</RelativeLayout>
+</LinearLayout>
