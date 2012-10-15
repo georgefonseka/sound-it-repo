@@ -4,7 +4,7 @@
     android:layout_height="match_parent" >
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/record_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -12,7 +12,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:text="@string/recording_record" 
-        android:onClick="sendToFriend"/>
+        android:onClick="onClick"/>
 
 </RelativeLayout>
 

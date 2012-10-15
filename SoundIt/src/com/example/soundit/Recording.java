@@ -3,71 +3,38 @@ package com.example.soundit;
 import java.io.IOException;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.media.MediaPlayer;
 import android.media.MediaRecorder;
 import android.os.Bundle;
 import android.os.Environment;
-import android.speech.tts.TextToSpeech;
-import android.speech.tts.TextToSpeech.OnInitListener;
-import android.support.v4.app.NavUtils;
 import android.util.Log;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.LinearLayout;
 
-public class Recording extends Activity implements OnInitListener {
+public class Recording extends Activity {
 	
-    private static final String LOG_TAG = "AudioRecordTest";
+    private static final String LOG_TAG = "Recording";
     private static String mFileName = null;
 
-    private RecordButton mRecordButton = null;
     private MediaRecorder mRecorder = null;
+    private boolean mRecording;
+    private Button mButton;
 
-    private PlayButton   mPlayButton = null;
-    private MediaPlayer   mPlayer = null;
-    
-    TextToSpeech talker;
 
-//    @Override
-//    public void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_recording);
-//        //getActionBar().setDisplayHomeAsUpEnabled(true);
-//    }
-    
-    public Recording() {
-        mFileName = Environment.getExternalStorageDirectory().getAbsolutePath();
-        mFileName += "/audiorecordtest.3gp";
-        
-        Log.e(LOG_TAG, "filename: " + mFileName);
-    }
-    
     @Override
-    public void onCreate(Bundle icicle) {
-        super.onCreate(icicle);
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         
-        talker = new TextToSpeech(this, this);
-
-        LinearLayout ll = new LinearLayout(this);
-        mRecordButton = new RecordButton(this);
-        ll.addView(mRecordButton,
-            new LinearLayout.LayoutParams(
-                ViewGroup.LayoutParams.WRAP_CONTENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT,
-                0));
-        mPlayButton = new PlayButton(this);
-        ll.addView(mPlayButton,
-            new LinearLayout.LayoutParams(
-                ViewGroup.LayoutParams.WRAP_CONTENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT,
-                0));
-        setContentView(ll);
+        mFileName = Environment.getExternalStorageDirectory().getAbsolutePath();
+        mFileName += "/soundit-audio.3gp";
+        Log.d(LOG_TAG, "filename: " + mFileName);
+        
+        setContentView(R.layout.activity_recording);
+        
+        mButton = (Button) findViewById(R.id.record_button);
     }
+    
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -75,56 +42,15 @@ public class Recording extends Activity implements OnInitListener {
         return true;
     }
 
-    
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                NavUtils.navigateUpFromSameTask(this);
-                return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-    
-
-    public void sendToFriend(View view) {
-        // Do something in response to button
-    	Intent intent = new Intent(this, SendFriend.class);
-    	startActivity(intent);
-    }
-    
-
-
-    private void onRecord(boolean start) {
-        if (start) {
+    public void onClick(View view) {
+    	if (!mRecording) {
             startRecording();
         } else {
             stopRecording();
+            Intent intent = new Intent(this, SendFriend.class);
+        	startActivity(intent);
         }
-    }
-
-    private void onPlay(boolean start) {
-        if (start) {
-            startPlaying();
-        } else {
-            stopPlaying();
-        }
-    }
-
-    private void startPlaying() {
-        mPlayer = new MediaPlayer();
-        try {
-            mPlayer.setDataSource(mFileName);
-            mPlayer.prepare();
-            mPlayer.start();
-        } catch (IOException e) {
-            Log.e(LOG_TAG, "prepare() failed");
-        }
-    }
-
-    private void stopPlaying() {
-        mPlayer.release();
-        mPlayer = null;
+    	
     }
 
     private void startRecording() {
@@ -133,83 +59,51 @@ public class Recording extends Activity implements OnInitListener {
         mRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
         mRecorder.setOutputFile(mFileName);
         mRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
-
         try {
+        	Log.d(LOG_TAG, "prepare media recorder.");
             mRecorder.prepare();
+            mRecorder.start();
+            mRecording = true;
+            // TODO play sound
+            mButton.setText("Stop");
         } catch (IOException e) {
             Log.e(LOG_TAG, "prepare() failed");
+            // TODO some audible error msg
         }
-
-        mRecorder.start();
     }
 
     private void stopRecording() {
         mRecorder.stop();
         mRecorder.release();
         mRecorder = null;
+        reset();
     }
-
-    class RecordButton extends Button {
-        boolean mStartRecording = true;
-
-        OnClickListener clicker = new OnClickListener() {
-            public void onClick(View v) {
-                onRecord(mStartRecording);
-                if (mStartRecording) {
-                    setText("Stop recording");
-                } else {
-                    setText("Start recording");
-                }
-                mStartRecording = !mStartRecording;
-            }
-        };
-
-        public RecordButton(Context ctx) {
-            super(ctx);
-            setText("Start recording");
-            setOnClickListener(clicker);
-        }
-    }
-
-    class PlayButton extends Button {
-        boolean mStartPlaying = true;
-
-        OnClickListener clicker = new OnClickListener() {
-            public void onClick(View v) {
-                onPlay(mStartPlaying);
-                if (mStartPlaying) {
-                    setText("Stop playing");
-                } else {
-                    setText("Start playing");
-                }
-                mStartPlaying = !mStartPlaying;
-            }
-        };
-
-        public PlayButton(Context ctx) {
-            super(ctx);
-            setText("Start playing");
-            setOnClickListener(clicker);
-        }
+    
+    private void reset() {
+    	mRecording = false;
+    	mButton.setText("Record");
     }
 
     @Override
     public void onPause() {
+    	Log.d(LOG_TAG, "pause");
         super.onPause();
         if (mRecorder != null) {
             mRecorder.release();
+            if(mRecording) {
+            	mRecorder.stop();
+            	reset();
+            	// TODO delete the file??
+            }
             mRecorder = null;
         }
-
-        if (mPlayer != null) {
-            mPlayer.release();
-            mPlayer = null;
-        }
     }
-
-	public void onInit(int status) {
-		talker.speak("George is the best. George is really amazing.",
-				TextToSpeech.QUEUE_FLUSH, null);
-	}
+    
+    @Override
+    public void onRestart() {
+    	Log.d(LOG_TAG, "restart");
+        super.onRestart();
+        reset();
+    }
 
 }
