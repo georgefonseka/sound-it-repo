@@ -80,3 +80,7 @@ SoundIt/bin/res/drawable-xhdpi/ic_action_search.png
 SoundIt/bin/res/drawable-xhdpi/ic_launcher.png
 
 SoundIt/bin/res/drawable/background.png
+
+SoundIt/bin/classes/com/example/soundit/ApplicationProperties.class
+
+SoundIt/bin/classes/com/example/soundit/MainActivity$1.class

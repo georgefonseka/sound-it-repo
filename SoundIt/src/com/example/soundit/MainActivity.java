@@ -6,13 +6,10 @@ import java.util.HashMap;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
-<<<<<<< HEAD
 import android.graphics.Typeface;
-=======
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.TextToSpeech.OnInitListener;
 import android.util.Log;
->>>>>>> 6c5c82c2a6ea707321293e4ec3a9112f9fb44e14
 import android.view.Menu;
 import android.view.View;
 import android.widget.TextView;
@@ -29,7 +26,6 @@ public class MainActivity extends Activity implements OnInitListener{
     public void onCreate(Bundle savedInstanceState) {
     	Log.d(LOG_TAG, "onCreate" );
         super.onCreate(savedInstanceState);
-<<<<<<< HEAD
         setContentView(R.layout.activity_main);        
         //this thing is use to initiate the font
         TextView txt = (TextView) findViewById(R.id.imageButtonSelector); 
@@ -37,8 +33,7 @@ public class MainActivity extends Activity implements OnInitListener{
 		Typeface myfont=Typeface.createFromAsset(getAssets(), "fonts/ballpark_weiner.ttf");
 		txt.setTypeface(myfont);
 		text.setTypeface(myfont);
-=======
->>>>>>> 6c5c82c2a6ea707321293e4ec3a9112f9fb44e14
+
         
         // check if tts supported
         Intent checkTTSIntent = new Intent();
