@@ -11,8 +11,13 @@ public final class R {
     public static final class attr {
     }
     public static final class drawable {
-        public static final int ic_action_search=0x7f020000;
-        public static final int ic_launcher=0x7f020001;
+        public static final int background=0x7f020000;
+        public static final int bg=0x7f020001;
+        public static final int btnsai_down=0x7f020002;
+        public static final int btnsai_up=0x7f020003;
+        public static final int ic_action_search=0x7f020004;
+        public static final int ic_launcher=0x7f020005;
+        public static final int my_btn=0x7f020006;
     }
     public static final class id {
         public static final int btnCat=0x7f080001;
@@ -20,17 +25,17 @@ public final class R {
         public static final int btnFromGeorge=0x7f080002;
         public static final int btnFromShu=0x7f080003;
         public static final int btnGeorge=0x7f080004;
-        public static final int btnGuess=0x7f08000a;
-        public static final int btnPlay=0x7f080009;
         public static final int btnReplay=0x7f08000d;
         public static final int btnReplayFriendSound=0x7f080006;
         public static final int btnSend=0x7f08000e;
         public static final int btnShu=0x7f080005;
-        public static final int btnTuto=0x7f08000b;
         public static final int btn_submit=0x7f080008;
         public static final int button1=0x7f08000c;
         public static final int edit_message=0x7f080007;
+        public static final int guessing_btn=0x7f08000a;
+        public static final int imageButtonSelector=0x7f080009;
         public static final int menu_settings=0x7f08000f;
+        public static final int tutorial_btn=0x7f08000b;
     }
     public static final class layout {
         public static final int activity_chooes_asound=0x7f030000;
