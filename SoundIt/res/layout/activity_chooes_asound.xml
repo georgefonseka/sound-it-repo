@@ -14,7 +14,7 @@
         android:text="@string/home_play"
         android:textColor="#00adee"
         android:gravity="center"
-        android:background="@drawable/btn_down"
+        android:background="@drawable/my_btn"
         
         android:onClick="goToRecording" />
 

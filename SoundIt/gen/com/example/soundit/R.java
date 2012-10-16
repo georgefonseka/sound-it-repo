@@ -13,15 +13,14 @@ public final class R {
     public static final class drawable {
         public static final int background=0x7f020000;
         public static final int bg=0x7f020001;
-        public static final int btn_down=0x7f020002;
-        public static final int btnsai_down=0x7f020003;
-        public static final int btnsai_up=0x7f020004;
-        public static final int de=0x7f020005;
-        public static final int de2=0x7f020006;
-        public static final int ic_action_search=0x7f020007;
-        public static final int ic_launcher=0x7f020008;
-        public static final int my_btn=0x7f020009;
-        public static final int thing=0x7f02000a;
+        public static final int btnsai_down=0x7f020002;
+        public static final int btnsai_up=0x7f020003;
+        public static final int de=0x7f020004;
+        public static final int de2=0x7f020005;
+        public static final int ic_action_search=0x7f020006;
+        public static final int ic_launcher=0x7f020007;
+        public static final int my_btn=0x7f020008;
+        public static final int thing=0x7f020009;
     }
     public static final class id {
         public static final int btnFromGeorge=0x7f080002;
