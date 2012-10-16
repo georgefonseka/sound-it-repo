@@ -60,7 +60,8 @@ public final class R {
         public static final int activity_send_friend=0x7f070006;
     }
     public static final class raw {
-        public static final int testing_voicein_homepage=0x7f040000;
+        public static final int beep=0x7f040000;
+        public static final int testing_voicein_homepage=0x7f040001;
     }
     public static final class string {
         public static final int app_name=0x7f050000;
@@ -92,5 +93,6 @@ public final class R {
     }
     public static final class style {
         public static final int AppTheme=0x7f060000;
+        public static final int generalnotitle=0x7f060001;
     }
 }
