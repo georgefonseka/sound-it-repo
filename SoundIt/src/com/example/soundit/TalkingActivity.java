@@ -117,7 +117,7 @@ public abstract class TalkingActivity extends Activity implements OnInitListener
 	@SuppressWarnings("deprecation")
 	public void speak() {
 		if(ApplicationProperties.getInstance().getProperties().containsKey(getMessageKey())) {
-			tts.speak(getShortMessage(), TextToSpeech.QUEUE_FLUSH, null);
+			tts.speak(getShortMessage(), TextToSpeech.QUEUE_ADD, null);
 		} else {
 			// set up onCompleteListener to we can record full instructions have been delivered once
 			tts.setOnUtteranceCompletedListener( new TextToSpeech.OnUtteranceCompletedListener() {
@@ -130,7 +130,7 @@ public abstract class TalkingActivity extends Activity implements OnInitListener
 			HashMap<String, String> params = new HashMap<String, String>();
 			params.put(TextToSpeech.Engine.KEY_PARAM_UTTERANCE_ID, getUtteranceId());
 			tts.speak(getFullMessage(),
-							TextToSpeech.QUEUE_FLUSH, params);
+							TextToSpeech.QUEUE_ADD, params);
 		}
 	}
 

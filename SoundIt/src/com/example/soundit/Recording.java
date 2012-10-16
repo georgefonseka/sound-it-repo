@@ -2,10 +2,6 @@ package com.example.soundit;
 
 import java.io.IOException;
 
-<<<<<<< HEAD
-import android.app.Activity;
-=======
->>>>>>> 685296cbbbd7acb713269ec43c97a5ae32449362
 import android.content.Intent;
 import android.media.MediaRecorder;
 import android.os.Bundle;
@@ -14,24 +10,14 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 
-<<<<<<< HEAD
-public class Recording extends Activity {
-=======
+
 public class Recording extends TalkingActivity {
->>>>>>> 685296cbbbd7acb713269ec43c97a5ae32449362
 	
     private static final String LOG_TAG = "Recording";
-
     private MediaRecorder mRecorder = null;
     private boolean mRecording;
     private Button mButton;
-<<<<<<< HEAD
 
-
-=======
-
-
->>>>>>> 685296cbbbd7acb713269ec43c97a5ae32449362
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -111,9 +97,6 @@ public class Recording extends TalkingActivity {
         super.onRestart();
         reset();
     }
-<<<<<<< HEAD
-=======
-
 
 	@Override
 	public String getUtteranceId() {
@@ -137,6 +120,5 @@ public class Recording extends TalkingActivity {
 	public String getShortMessage() {
 		return "Record a sound.";
 	}
->>>>>>> 685296cbbbd7acb713269ec43c97a5ae32449362
 
 }

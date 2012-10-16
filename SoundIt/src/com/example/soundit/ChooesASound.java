@@ -2,11 +2,6 @@ package com.example.soundit;
 
 import java.util.ArrayList;
 
-<<<<<<< HEAD
-//import com.example.my.fiest.app.R;
-
-=======
->>>>>>> 685296cbbbd7acb713269ec43c97a5ae32449362
 import android.os.Bundle;
 import android.content.Intent;
 import android.util.DisplayMetrics;
@@ -16,11 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.support.v4.app.NavUtils;
 
-<<<<<<< HEAD
-public class ChooesASound extends Activity {
-=======
 public class ChooesASound extends TalkingActivity {
->>>>>>> 685296cbbbd7acb713269ec43c97a5ae32449362
     //ElementButton1 mElementButton1 = null;
 	//ElementButton2 mElementButton2 = null;
 	private ArrayList<String> Candidates=new ArrayList<String>();
@@ -32,25 +23,13 @@ public class ChooesASound extends TalkingActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
     	super.onCreate(savedInstanceState);
-<<<<<<< HEAD
-    	
 
-    	
-=======
-
->>>>>>> 685296cbbbd7acb713269ec43c97a5ae32449362
     	Candidates.add("dog");
     	Candidates.add("cat");
     	Candidates.add("duck");
     	Candidates.add("pig");
     	//System.out.println("Candidates size: "+(Candidates.size()-1));   	
     	setRandomSound();   
-<<<<<<< HEAD
-    	
-    	
-    	
-=======
->>>>>>> 685296cbbbd7acb713269ec43c97a5ae32449362
 
         //定义DisplayMetrics 对象
         DisplayMetrics  dm = new DisplayMetrics();
@@ -161,10 +140,6 @@ public class ChooesASound extends TalkingActivity {
 			super(context);
 			setText(Candidates.get(tempNum1)+"tempNum1");
 			System.out.println("setText(Candidates.get(tempNum1)+tempNum1);"+Candidates.get(tempNum1)+"tempNum1");
-<<<<<<< HEAD
-			// TODO Auto-generated constructor stub
-=======
->>>>>>> 685296cbbbd7acb713269ec43c97a5ae32449362
 		}
 
     }
@@ -173,16 +148,10 @@ public class ChooesASound extends TalkingActivity {
 		public ElementButton2(Context context) {
 			super(context);
 			setText(Candidates.get(tempNum2)+"tempNum2");
-<<<<<<< HEAD
-			// TODO Auto-generated constructor stub
-=======
->>>>>>> 685296cbbbd7acb713269ec43c97a5ae32449362
 		}
 
     }
 */
-<<<<<<< HEAD
-=======
 
 	@Override
 	public String getUtteranceId() {
@@ -203,6 +172,5 @@ public class ChooesASound extends TalkingActivity {
 	public String getShortMessage() {
 		return "Choose a sound.";
 	}
->>>>>>> 685296cbbbd7acb713269ec43c97a5ae32449362
 
 }
