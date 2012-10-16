@@ -26,6 +26,9 @@ public class MainActivity extends Activity implements OnInitListener {
     	Log.d(LOG_TAG, "onCreate" );
         super.onCreate(savedInstanceState);
         
+        setTitle("");
+        
+        
         // check if tts supported
         Intent checkTTSIntent = new Intent();
         checkTTSIntent.setAction(TextToSpeech.Engine.ACTION_CHECK_TTS_DATA);
@@ -73,7 +76,7 @@ public class MainActivity extends Activity implements OnInitListener {
 	    		tts = null;
 	    	}
 	    	
-	    	//ApplicationProperties.getInstance().getProperties().clear();
+	    	ApplicationProperties.getInstance().getProperties().clear();
 	    	
 	    	super.onDestroy();
 	 }
@@ -102,7 +105,7 @@ public class MainActivity extends Activity implements OnInitListener {
 	@SuppressWarnings("deprecation")
 	public void speak() {
 		if(ApplicationProperties.getInstance().getProperties().containsKey("HOME")) {
-			tts.speak("Home page.", TextToSpeech.QUEUE_FLUSH, null);
+			tts.speak("Home page.", TextToSpeech.QUEUE_ADD, null);
 		} else {
 			// set up onCompleteListener to we can record full instructions have been delivered once
 			tts.setOnUtteranceCompletedListener( new TextToSpeech.OnUtteranceCompletedListener() {
@@ -115,7 +118,7 @@ public class MainActivity extends Activity implements OnInitListener {
 			HashMap<String, String> params = new HashMap<String, String>();
 			params.put(TextToSpeech.Engine.KEY_PARAM_UTTERANCE_ID, MAIN_UTTERANCE_ID);
 			tts.speak("Home page. Start a game. Guess a sound. Or view tutorial.",
-							TextToSpeech.QUEUE_FLUSH, params);
+							TextToSpeech.QUEUE_ADD, params);
 		}
 	}
 

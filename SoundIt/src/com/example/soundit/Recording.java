@@ -3,6 +3,7 @@ package com.example.soundit;
 import java.io.IOException;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.media.MediaRecorder;
 import android.os.Bundle;
 import android.util.Log;
@@ -56,16 +57,24 @@ public class Recording extends TalkingActivity {
             mRecorder.prepare();
             mRecorder.start();
             mRecording = true;
-            // TODO play sound
+	        // there seems to be a delay so we will  play the sound after start
+	        playSound();
+	        // change the text for the button
             mButton.setText("Stop");
         } catch (IOException e) {
             Log.e(LOG_TAG, "prepare() failed");
-            // TODO some audible error msg
+            speak("Unable to record sound.");
         }
+    }
+    
+    private void playSound() {
+    	MediaPlayer mediaPlayer = MediaPlayer.create(this.getApplicationContext(), R.raw.beep);
+        mediaPlayer.start();
     }
 
     private void stopRecording() {
         mRecorder.stop();
+        playSound();
         mRecorder.release();
         mRecorder = null;
         reset();

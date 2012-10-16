@@ -133,5 +133,9 @@ public abstract class TalkingActivity extends Activity implements OnInitListener
 							TextToSpeech.QUEUE_ADD, params);
 		}
 	}
+	
+	public void speak(String msg) {
+		tts.speak(msg, TextToSpeech.QUEUE_ADD, null);
+	}
 
 }
