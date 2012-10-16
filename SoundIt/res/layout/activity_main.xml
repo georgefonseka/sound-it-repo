@@ -3,37 +3,44 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/bg"
-    >
-	
+    android:background="@drawable/bg">
 	<Button
         android:id="@+id/imageButtonSelector"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Play"
-        android:textSize="50dp"
-        android:textColor="#00adee"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
         android:gravity="center"
-        android:background="@drawable/my_btn"
+        android:text="@string/home_play"
+        android:drawableLeft="@drawable/thing"
         android:onClick="goToPlay"
-         />
-      
+        android:background="@drawable/my_btn"
+        >
+     
+    </Button>
+    <!-- android:background="@drawable/my_btn" -->  
     <Button
         android:id="@+id/guessing_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Guess"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:text="@string/home_play"
         android:textSize="50dp"
+        android:paddingLeft="20dp"
         android:textColor="#00adee"
         android:gravity="center"
+        android:drawableLeft="@drawable/thing"
         android:background="@drawable/my_btn"
-        android:onClick="goToGuess" />
+        android:onClick="goToGuess"
+        
+        android:maxLines="1"
+        />
+     <!-- -->
 
     <Button
         android:id="@+id/tutorial_btn"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="50dp"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
         android:textColor="#ffffff"
         android:gravity="center"
         android:background="@drawable/my_btn"
