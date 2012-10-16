@@ -2,10 +2,7 @@ package com.example.soundit;
 
 import java.util.ArrayList;
 
-//import com.example.my.fiest.app.R;
-
 import android.os.Bundle;
-import android.app.Activity;
 import android.content.Intent;
 import android.util.DisplayMetrics;
 import android.view.Menu;
@@ -14,7 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.support.v4.app.NavUtils;
 
-public class ChooesASound extends Activity {
+public class ChooesASound extends TalkingActivity {
     //ElementButton1 mElementButton1 = null;
 	//ElementButton2 mElementButton2 = null;
 	private ArrayList<String> Candidates=new ArrayList<String>();
@@ -26,18 +23,13 @@ public class ChooesASound extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
     	super.onCreate(savedInstanceState);
-    	
 
-    	
     	Candidates.add("dog");
     	Candidates.add("cat");
     	Candidates.add("duck");
     	Candidates.add("pig");
     	//System.out.println("Candidates size: "+(Candidates.size()-1));   	
     	setRandomSound();   
-    	
-    	
-    	
 
         //定义DisplayMetrics 对象
         DisplayMetrics  dm = new DisplayMetrics();
@@ -148,7 +140,6 @@ public class ChooesASound extends Activity {
 			super(context);
 			setText(Candidates.get(tempNum1)+"tempNum1");
 			System.out.println("setText(Candidates.get(tempNum1)+tempNum1);"+Candidates.get(tempNum1)+"tempNum1");
-			// TODO Auto-generated constructor stub
 		}
 
     }
@@ -157,10 +148,29 @@ public class ChooesASound extends Activity {
 		public ElementButton2(Context context) {
 			super(context);
 			setText(Candidates.get(tempNum2)+"tempNum2");
-			// TODO Auto-generated constructor stub
 		}
 
     }
 */
+
+	@Override
+	public String getUtteranceId() {
+		return "ChooseSound";
+	}
+
+	@Override
+	public String getMessageKey() {
+		return "ChooseSound";
+	}
+
+	@Override
+	public String getFullMessage() {
+		return "Choose a sound from the following two options.";
+	}
+
+	@Override
+	public String getShortMessage() {
+		return "Choose a sound.";
+	}
 
 }
