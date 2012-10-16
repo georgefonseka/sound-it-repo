@@ -14,44 +14,36 @@
         android:drawableLeft="@drawable/thing"
         android:onClick="goToPlay"
         android:background="@drawable/my_btn"
-        />
+        >
      
-  
+    </Button>
+    <!-- android:background="@drawable/my_btn" -->  
     <Button
         android:id="@+id/guessing_btn"
-      
         android:layout_width="wrap_content"
         android:layout_height="fill_parent"
         android:layout_weight="1"
-        android:maxLines="1"
+        android:text="@string/home_play"
         android:textSize="50dp"
         android:paddingLeft="20dp"
-        android:paddingRight="50dp"
         android:textColor="#00adee"
         android:gravity="center"
         android:drawableLeft="@drawable/thing"
         android:background="@drawable/my_btn"
-        
         android:onClick="goToGuess"
-        android:text="@string/home_play"
         
+        android:maxLines="1"
         />
+     <!-- -->
 
     <Button
         android:id="@+id/tutorial_btn"
-        
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="fill_parent"
         android:layout_weight="1"
-        android:maxLines="1"
-        android:textSize="50dp"
-        android:paddingLeft="20dp"
-        android:paddingRight="50dp"
-        android:textColor="#00adee"
+        android:textColor="#ffffff"
         android:gravity="center"
-        android:drawableLeft="@drawable/thing"
         android:background="@drawable/my_btn"
-        
         android:text="@string/home_tutorial" />
 
 </LinearLayout>
