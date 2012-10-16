@@ -26,6 +26,7 @@ public class MainActivity extends Activity implements OnInitListener{
     public void onCreate(Bundle savedInstanceState) {
     	Log.d(LOG_TAG, "onCreate" );
         super.onCreate(savedInstanceState);
+<<<<<<< HEAD
         setContentView(R.layout.activity_main);        
         //this thing is use to initiate the font
         TextView txt = (TextView) findViewById(R.id.imageButtonSelector); 
@@ -33,6 +34,9 @@ public class MainActivity extends Activity implements OnInitListener{
 		Typeface myfont=Typeface.createFromAsset(getAssets(), "fonts/ballpark_weiner.ttf");
 		txt.setTypeface(myfont);
 		text.setTypeface(myfont);
+=======
+        
+>>>>>>> Khoa's
 
         
         // check if tts supported
@@ -40,7 +44,14 @@ public class MainActivity extends Activity implements OnInitListener{
         checkTTSIntent.setAction(TextToSpeech.Engine.ACTION_CHECK_TTS_DATA);
         startActivityForResult(checkTTSIntent, DATA_CHECK_CODE);
         
-        setContentView(R.layout.activity_main);        
+        setContentView(R.layout.activity_main);
+        
+        //this thing is use to initiate the font it need to happened after the layout is initiate
+        TextView txt = (TextView) findViewById(R.id.imageButtonSelector); 
+        TextView text =(TextView) findViewById(R.id.guessing_btn);
+		Typeface myfont=Typeface.createFromAsset(getAssets(), "fonts/ballpark_weiner.ttf");
+		txt.setTypeface(myfont);
+		text.setTypeface(myfont);        
     }
     
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
