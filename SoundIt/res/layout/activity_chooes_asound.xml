@@ -1,26 +1,26 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
 
     <Button
-        android:id="@+id/btnDog"
+        android:id="@+id/mElementButton1"
         android:layout_width="wrap_content"
-        android:layout_height="230dp"
+        android:layout_height="300dp"
+        android:layout_above="@+id/mElementButton2"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:text="@string/chooese_dog"
+        
         android:onClick="goToRecording" />
 
     <Button
-        android:id="@+id/btnCat"
+        android:id="@+id/mElementButton2"
         android:layout_width="wrap_content"
-        android:layout_height="230dp"
+        android:layout_height="300dp"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/btnDog"
-        android:text="@string/chooese_cat"
         android:onClick="goToRecording" />
 
 </RelativeLayout>

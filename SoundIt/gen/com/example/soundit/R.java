@@ -22,8 +22,6 @@ public final class R {
         public static final int my_btn=0x7f020008;
     }
     public static final class id {
-        public static final int btnCat=0x7f080001;
-        public static final int btnDog=0x7f080000;
         public static final int btnFromGeorge=0x7f080002;
         public static final int btnFromShu=0x7f080003;
         public static final int btnGeorge=0x7f080004;
@@ -32,11 +30,13 @@ public final class R {
         public static final int btnSend=0x7f08000e;
         public static final int btnShu=0x7f080005;
         public static final int btn_submit=0x7f080008;
-        public static final int button1=0x7f08000c;
         public static final int edit_message=0x7f080007;
         public static final int guessing_btn=0x7f08000a;
         public static final int imageButtonSelector=0x7f080009;
+        public static final int mElementButton1=0x7f080000;
+        public static final int mElementButton2=0x7f080001;
         public static final int menu_settings=0x7f08000f;
+        public static final int record_button=0x7f08000c;
         public static final int tutorial_btn=0x7f08000b;
     }
     public static final class layout {
