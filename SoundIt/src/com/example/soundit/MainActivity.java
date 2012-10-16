@@ -26,9 +26,6 @@ public class MainActivity extends Activity implements OnInitListener {
     	Log.d(LOG_TAG, "onCreate" );
         super.onCreate(savedInstanceState);
         
-        setTitle("");
-        
-        
         // check if tts supported
         Intent checkTTSIntent = new Intent();
         checkTTSIntent.setAction(TextToSpeech.Engine.ACTION_CHECK_TTS_DATA);
@@ -75,8 +72,6 @@ public class MainActivity extends Activity implements OnInitListener {
 	    		tts.shutdown();
 	    		tts = null;
 	    	}
-	    	
-	    	ApplicationProperties.getInstance().getProperties().clear();
 	    	
 	    	super.onDestroy();
 	 }

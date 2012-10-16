@@ -64,13 +64,13 @@ public class yypService extends Service {
 			mp = new MediaPlayer();
 			// 将音乐保存在res/raw/xingshu.mp3,R.java中自动生成{public static final int xingshu=0x7f040000;}
 			if(tempNum==1){
-				mp = MediaPlayer.create(yypService.this, R.raw.testing_voicein_homepage);
+				mp = MediaPlayer.create(yypService.this, R.raw.cat);
 			}
 			if(tempNum==2){
-				mp = MediaPlayer.create(yypService.this, R.raw.testing_voicein_homepage);
+				mp = MediaPlayer.create(yypService.this, R.raw.dog);
 			}
 			if(tempNum==3){
-				mp = MediaPlayer.create(yypService.this, R.raw.testing_voicein_homepage);
+				mp = MediaPlayer.create(yypService.this, R.raw.snake);
 			}
 			// 在MediaPlayer取得播放资源与stop()之后要准备PlayBack的状态前一定要使用MediaPlayer.prepeare()
 			mp.prepare();

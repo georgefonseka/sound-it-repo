@@ -18,11 +18,12 @@ public class Recording extends TalkingActivity {
     private MediaRecorder mRecorder = null;
     private boolean mRecording;
     private Button mButton;
+    private String mSoundSuggestion;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        
+        mSoundSuggestion = getIntent().getExtras().getString("soundSuggestion");
         setContentView(R.layout.activity_recording);
         
         mButton = (Button) findViewById(R.id.record_button);
@@ -77,6 +78,8 @@ public class Recording extends TalkingActivity {
         playSound();
         mRecorder.release();
         mRecorder = null;
+        ApplicationProperties.getInstance().addPlayedSoundSuggestion(mSoundSuggestion);
+        mSoundSuggestion =  null;
         reset();
     }
     

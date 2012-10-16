@@ -1,10 +1,10 @@
 package com.example.soundit;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import android.os.Bundle;
 import android.content.Intent;
-import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -23,79 +23,18 @@ public class ChooesASound extends TalkingActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
     	super.onCreate(savedInstanceState);
-
-    	Candidates.add("dog");
-    	Candidates.add("cat");
-    	Candidates.add("duck");
-    	Candidates.add("pig");
-    	//System.out.println("Candidates size: "+(Candidates.size()-1));   	
-    	setRandomSound();   
-
-        //定义DisplayMetrics 对象
-        DisplayMetrics  dm = new DisplayMetrics();
-        //取得窗口属性
-        getWindowManager().getDefaultDisplay().getMetrics(dm); 
-        //窗口的宽度
-        int screenWidth = dm.widthPixels;
-        //窗口高度
-        int screenHeight = dm.heightPixels;
-
-        System.out.println("屏幕宽度: " + screenWidth + "\n屏幕高度： " + screenHeight);
-    	//System.out.println("random number: "+tempNum1+", "+tempNum2);
-        
-    	//LinearLayout ll = new LinearLayout(this);
-    	//this.getString(mElementButton1);
-    	//this.getClass();
-    	//Button test1 = (Button) this.findViewById(R.id.mElementButton1);
-    	//test1.setText("test");
-    	//this.
-    	
-    	//this.getComponentName(R.id.mElementButton1);
-    	
-
-    	//EditText test = (EditText) findViewById(R.id.mElementButton1);
-    	//test1.setText("testing"); 	
-    	//mElementButton1 = new ElementButton1(this);
-    	//mElementButton2 = new ElementButton2(this);
-    	
-    	//mElementButton1.setLayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT)
-    	 
-    	//ll.setLayoutParams(mElementButton1, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, 230));
-    	
-    	//mElementButton1.setWidth(720);
-    	//mElementButton1.setHeight(500);
-    	//ll.addView(mElementButton1,
-    	//		new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.MATCH_PARENT,100));
-    	
-    	//ll.addView(mElementButton2,
-    	//		new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.MATCH_PARENT));
-    	//ll.addView(mElementButton1, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT,300) );
-    	//ll.addView(mElementButton2, 700,300);
-    	//ll.addView(mElementButton2,
-    	//    			new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT,100));
-    
-
-    	//ll.addView(mElementButton1, 600, 500);
-    	//ll.addView(mElementButton2, 600, 500);
-        //setContentView(R.layout.activity_chooes_asound);
-    	
-    	//ll.addView(mElementButton2, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT,100));
-        //setContentView(ll);
-        
-        //R.layout.activity_chooes_asound
-    	//System.out.println("mElementButton1 text: "+mElementButton1.getText());
+   
         setContentView(R.layout.activity_chooes_asound);
-       // System.out.println("R.layout.activity_chooes_asound");
+        
         Button mElementButton1=(Button)super.findViewById(R.id.mElementButton1);
         Button mElementButton2=(Button)super.findViewById(R.id.mElementButton2);
-        mElementButton1.setHeight(screenHeight/2);
-        mElementButton2.setHeight(screenHeight/2);
         
-        mElementButton1.setText(Candidates.get(tempNum1)+"tempNum1");
-        mElementButton2.setText(Candidates.get(tempNum2)+"tempNum2");
-        System.out.println(screenHeight/2);
+        List<String> sounds = ApplicationProperties.getInstance().getSoundSuggestions(2);
+        mElementButton1.setText(sounds.get(0));
+        mElementButton1.setContentDescription(sounds.get(0));
+        mElementButton2.setText(sounds.get(1));
+        mElementButton2.setContentDescription(sounds.get(1));
         
-        System.out.println("mElementButton1.getHeight()"+mElementButton1.getHeight());
         //getActionBar().setDisplayHomeAsUpEnabled(true);
         
         
@@ -119,8 +58,10 @@ public class ChooesASound extends TalkingActivity {
     }
     
     public void goToRecording(View view) {
+    	Button b = (Button) view;
         // Do something in response to button
     	Intent intent = new Intent(this, Recording.class);
+    	intent.putExtra("soundSuggestion", b.getText());
     	startActivity(intent);
     }
     

@@ -15,7 +15,6 @@
         android:textColor="#00adee"
         android:gravity="center"
         android:background="@drawable/my_btn"
-        
         android:onClick="goToRecording" />
 
     <Button
@@ -25,6 +24,7 @@
         android:layout_weight="1"
         android:textColor="#00adee"
         android:gravity="center"
+        android:background="@drawable/my_btn"
         android:onClick="goToRecording" />
 
 </LinearLayout>

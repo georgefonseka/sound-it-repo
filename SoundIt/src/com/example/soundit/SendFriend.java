@@ -4,7 +4,6 @@ import java.io.IOException;
 
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.app.Activity;
 import android.content.Intent;
 import android.util.Log;
 import android.view.Menu;
@@ -12,7 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.support.v4.app.NavUtils;
 
-public class SendFriend extends Activity {
+public class SendFriend extends TalkingActivity {
 	
 	private static final String LOG_TAG = "SendFriend";
 	
@@ -91,5 +90,25 @@ public class SendFriend extends Activity {
         	stopAndReleasePlayer();
         }
     }
+
+	@Override
+	public String getUtteranceId() {
+		return "confirmSound";
+	}
+
+	@Override
+	public String getMessageKey() {
+		return "confirmSound";
+	}
+
+	@Override
+	public String getFullMessage() {
+		return "Confirm sound. Replay. Or send to a friend;";
+	}
+
+	@Override
+	public String getShortMessage() {
+		return "Confirm sound.";
+	}
 
 }
