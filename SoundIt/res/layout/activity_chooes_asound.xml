@@ -1,16 +1,20 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:background="@drawable/bg"
+    >
 
     <Button
         android:id="@+id/mElementButton1"
-        android:layout_width="wrap_content"
-        android:layout_height="300dp"
-        android:layout_above="@+id/mElementButton2"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:text="@string/home_play"
+        android:textColor="#00adee"
+        android:gravity="center"
+        android:background="@drawable/btn_down"
         
         android:onClick="goToRecording" />
 
@@ -23,4 +27,4 @@
         android:layout_alignParentRight="true"
         android:onClick="goToRecording" />
 
-</RelativeLayout>
+</LinearLayout>
