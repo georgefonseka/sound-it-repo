@@ -1,34 +1,43 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
-
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg"
+    >
+   
     <Button
         android:id="@+id/btnReplayFriendSound"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:textColor="#00adee"
+        android:gravity="center"
+        android:background="@drawable/my_btn"
+        
         android:text="@string/guess_replay" />
 
     <EditText
         android:id="@+id/edit_message"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/btnReplayFriendSound"
-        android:layout_toLeftOf="@+id/btn_submit"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:color="#00adee"
+        android:textColor="#00adee"
+        android:gravity="top"
         android:ems="10"
+        android:textSize="30dp"
         android:hint="@string/guess_edit_message" />
 
     <Button
         android:id="@+id/btn_submit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/edit_message"
-        android:layout_alignBottom="@+id/edit_message"
-        android:layout_alignParentRight="true"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:textColor="#00adee"
+        android:gravity="center"
+        android:background="@drawable/my_btn"
         android:text="@string/guess_submit" 
         android:onClick="goBackHome"/>
 
-</RelativeLayout>
+</LinearLayout>
