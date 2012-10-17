@@ -42,7 +42,7 @@
         android:paddingRight="50dp"
         android:textColor="#00adee"
         android:gravity="center_vertical"
-        android:drawableLeft="@drawable/thing"
+        android:drawableLeft="@drawable/guess_icon"
         android:background="@drawable/my_btn"
         
         android:onClick="goToGuess"
@@ -65,7 +65,7 @@
         android:paddingRight="50dp"
         android:textColor="#00adee"
         android:gravity="center_vertical"
-        android:drawableLeft="@drawable/thing"
+        android:drawableLeft="@drawable/tut_icon"
         android:background="@drawable/my_btn"
         
         android:text="@string/home_tutorial" />

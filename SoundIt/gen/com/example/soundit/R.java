@@ -16,12 +16,14 @@ public final class R {
         public static final int btn_active=0x7f020002;
         public static final int btn_pressed=0x7f020003;
         public static final int btn_up=0x7f020004;
-        public static final int ic_action_search=0x7f020005;
-        public static final int ic_launcher=0x7f020006;
-        public static final int my_btn=0x7f020007;
-        public static final int start_btn=0x7f020008;
-        public static final int stop_btn=0x7f020009;
-        public static final int thing=0x7f02000a;
+        public static final int guess_icon=0x7f020005;
+        public static final int ic_action_search=0x7f020006;
+        public static final int ic_launcher=0x7f020007;
+        public static final int my_btn=0x7f020008;
+        public static final int start_btn=0x7f020009;
+        public static final int stop_btn=0x7f02000a;
+        public static final int thing=0x7f02000b;
+        public static final int tut_icon=0x7f02000c;
     }
     public static final class id {
         public static final int btnFromGeorge=0x7f080002;
