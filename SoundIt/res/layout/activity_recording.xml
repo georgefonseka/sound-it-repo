@@ -2,8 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-	android:background="@drawable/bg"
->
+	android:background="@drawable/bg">
 
     <Button
         android:id="@+id/record_button"
@@ -13,6 +12,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
+        android:background="@drawable/start_btn"
         android:text="@string/recording_record" 
         android:onClick="onClick"/>
 

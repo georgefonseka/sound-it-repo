@@ -13,14 +13,15 @@ public final class R {
     public static final class drawable {
         public static final int background=0x7f020000;
         public static final int bg=0x7f020001;
-        public static final int btnsai_down=0x7f020002;
-        public static final int btnsai_up=0x7f020003;
-        public static final int de=0x7f020004;
-        public static final int de2=0x7f020005;
-        public static final int ic_action_search=0x7f020006;
-        public static final int ic_launcher=0x7f020007;
-        public static final int my_btn=0x7f020008;
-        public static final int thing=0x7f020009;
+        public static final int btn_active=0x7f020002;
+        public static final int btn_pressed=0x7f020003;
+        public static final int btn_up=0x7f020004;
+        public static final int ic_action_search=0x7f020005;
+        public static final int ic_launcher=0x7f020006;
+        public static final int my_btn=0x7f020007;
+        public static final int start_btn=0x7f020008;
+        public static final int stop_btn=0x7f020009;
+        public static final int thing=0x7f02000a;
     }
     public static final class id {
         public static final int btnFromGeorge=0x7f080002;
@@ -60,14 +61,15 @@ public final class R {
     }
     public static final class raw {
         public static final int beep=0x7f040000;
-        public static final int cat=0x7f040001;
-        public static final int clap=0x7f040002;
-        public static final int dog=0x7f040003;
-        public static final int guitar=0x7f040004;
-        public static final int pig=0x7f040005;
-        public static final int siren=0x7f040006;
-        public static final int snake=0x7f040007;
-        public static final int tram=0x7f040008;
+        public static final int bike=0x7f040001;
+        public static final int cat=0x7f040002;
+        public static final int clap=0x7f040003;
+        public static final int dog=0x7f040004;
+        public static final int guitar=0x7f040005;
+        public static final int pig=0x7f040006;
+        public static final int siren=0x7f040007;
+        public static final int snake=0x7f040008;
+        public static final int tram=0x7f040009;
     }
     public static final class string {
         public static final int app_name=0x7f050000;
