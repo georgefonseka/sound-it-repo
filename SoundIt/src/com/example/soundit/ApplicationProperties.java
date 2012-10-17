@@ -54,13 +54,12 @@ public class ApplicationProperties {
     	return list;
     }
     
-    private List<SoundResource> getSoundResources(int size) {
-    	List<SoundResource> list = new ArrayList<SoundResource>();
-    	Collections.shuffle(soundResources);
-    	if(list.size() < size) {
-    		list = new ArrayList<SoundResource>(soundResources.subList(0, size));
+    public SoundResource getSoundResource() {
+    	if(soundResources.isEmpty()) {
+    		soundResources = createSoundResources();
     	}
-    	return soundResources;
+    	
+    	return soundResources.remove(0);
     }
     
     public List<String> getSoundSuggestions(int size) {

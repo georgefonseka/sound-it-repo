@@ -1,14 +1,13 @@
 package com.example.soundit;
 
-import android.os.Bundle;
-import android.app.Activity;
 import android.content.Intent;
+import android.os.Bundle;
+import android.support.v4.app.NavUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.support.v4.app.NavUtils;
 
-public class ChooseAFriend extends Activity {
+public class ChooseAFriend extends TalkingActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -38,5 +37,25 @@ public class ChooseAFriend extends Activity {
     	Intent intent = new Intent(this, GuessSoundPage.class);
     	startActivity(intent);
     }
+
+	@Override
+	public String getUtteranceId() {
+		return "ChooseFriend";
+	}
+
+	@Override
+	public String getMessageKey() {
+		return "ChooseFriend";
+	}
+
+	@Override
+	public String getFullMessage() {
+		return "Choose a friend and guess the sound.";
+	}
+
+	@Override
+	public String getShortMessage() {
+		return "Choose a friend.";
+	}
 
 }

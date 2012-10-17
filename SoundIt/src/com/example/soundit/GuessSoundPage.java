@@ -1,31 +1,56 @@
 package com.example.soundit;
 
-import android.os.Bundle;
-import android.app.Activity;
 import android.content.Intent;
+import android.media.MediaPlayer;
+import android.os.Bundle;
+import android.support.v4.app.NavUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.support.v4.app.NavUtils;
 
-public class GuessSoundPage extends Activity {
+public class GuessSoundPage extends TalkingActivity {
+	
+	private SoundResource soundResource;
+	private MediaPlayer mediaPlayer;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        
-    	
-    	Intent intent = new Intent(GuessSoundPage.this,yypService.class);  
-    	startService(intent); 
-    	
         super.onCreate(savedInstanceState);
+        soundResource = ApplicationProperties.getInstance().getSoundResource();
         setContentView(R.layout.activity_guess_sound_page);
         //getActionBar().setDisplayHomeAsUpEnabled(true);
-        
-        
-        
-        
-    }
 
+    }
+    
+    private void playSound(int rid) {
+    	if(mediaPlayer == null) {
+    		mediaPlayer = MediaPlayer.create(this.getApplicationContext(), rid);
+    	}
+    	mediaPlayer.start();
+    }
+    
+    public void replay(View v) {
+    	playSound(soundResource.getResourceId());
+    }
+    
+    @Override
+    public void onStart() {
+    	super.onStart();
+    	playSound(soundResource.getResourceId());
+    }
+    
+	@Override
+	protected void onStop() {
+		super.onStop();
+		if(mediaPlayer != null) {
+			if(mediaPlayer.isPlaying()) {
+				mediaPlayer.stop();
+			}
+			mediaPlayer.release();
+			mediaPlayer = null;
+		}
+	}
+	
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.activity_guess_sound_page, menu);
@@ -47,13 +72,25 @@ public class GuessSoundPage extends Activity {
     	Intent intent = new Intent(this, MainActivity.class);
     	startActivity(intent);
     }
-    
+
 	@Override
-	protected void onStop() {
-		// TODO Auto-generated method stub
-		Intent intent = new Intent(GuessSoundPage.this,yypService.class);
-		stopService(intent);
-		super.onStop();
+	public String getUtteranceId() {
+		return "GuessSound";
+	}
+
+	@Override
+	public String getMessageKey() {
+		return "GuessSound";
+	}
+
+	@Override
+	public String getFullMessage() {
+		return "Guess sound";
+	}
+
+	@Override
+	public String getShortMessage() {
+		return "Guess sound";
 	}
 
 }
