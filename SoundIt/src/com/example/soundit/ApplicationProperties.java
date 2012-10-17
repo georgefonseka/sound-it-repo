@@ -67,16 +67,16 @@ public class ApplicationProperties {
     	// shuffle so we get random order
     	Collections.shuffle(soundSuggestions);
     	
-    	for(int i = 0; i < size; i++) {
-    		for(int j = 0; j < soundSuggestions.size(); j++) {
-    			String suggestion = soundSuggestions.get(j);
-    			// check if this has already been played
-    			if(playedSoundSuggestions.contains(suggestion)) {
-    				list.add(suggestion);
-    				break;
-    			}
-    		}
-    	}
+		for(int i = 0; i < soundSuggestions.size(); i++) {
+			String suggestion = soundSuggestions.get(i);
+			// check if this has already been played
+			if(playedSoundSuggestions.contains(suggestion)) {
+				list.add(suggestion);
+				if(list.size() == size) {
+					break;
+				}
+			}
+		}
     	
     	// if everything has been played just add whatever
     	if(list.size() < size) {
@@ -125,7 +125,7 @@ public class ApplicationProperties {
 		list.add("catfish");
 		list.add("leapfrog");
 		list.add("wheelbarrow");
-		list.add("footstep");
+		list.add("footsteps");
 
     	return list;
     }

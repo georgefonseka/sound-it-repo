@@ -47,7 +47,8 @@ public class Recording extends TalkingActivity {
     	
     }
 
-    private void startRecording() {
+    @SuppressWarnings("deprecation")
+	private void startRecording() {
         mRecorder = new MediaRecorder();
         mRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
         mRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
@@ -81,13 +82,13 @@ public class Recording extends TalkingActivity {
         mRecorder = null;
         ApplicationProperties.getInstance().addPlayedSoundSuggestion(mSoundSuggestion);
         mSoundSuggestion =  null;
-        reset();
     }
     
-    private void reset() {
+    @SuppressWarnings("deprecation")
+	private void reset() {
     	mRecording = false;
     	mButton.setText("Record");
-    	
+    	mButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.start_btn));
     }
 
     @Override

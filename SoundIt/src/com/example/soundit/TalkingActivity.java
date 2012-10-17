@@ -39,15 +39,15 @@ public abstract class TalkingActivity extends Activity implements OnInitListener
 	public abstract String getShortMessage();
 	
 	 public void onCreate(Bundle savedInstanceState) {
-	    	Log.d(LOG_TAG, "onCreate" );
-	        super.onCreate(savedInstanceState);
-	        
-	        // check if tts supported
-	        Intent checkTTSIntent = new Intent();
-	        checkTTSIntent.setAction(TextToSpeech.Engine.ACTION_CHECK_TTS_DATA);
-	        startActivityForResult(checkTTSIntent, DATA_CHECK_CODE);
-	        
-	    }
+    	Log.d(LOG_TAG, "onCreate" );
+        super.onCreate(savedInstanceState);
+        
+        // check if tts supported
+        Intent checkTTSIntent = new Intent();
+        checkTTSIntent.setAction(TextToSpeech.Engine.ACTION_CHECK_TTS_DATA);
+        startActivityForResult(checkTTSIntent, DATA_CHECK_CODE);
+        
+    }
 	
 	
 	public void checkTextToSpeech() {
