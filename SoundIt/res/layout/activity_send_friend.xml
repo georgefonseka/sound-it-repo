@@ -1,35 +1,26 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-	android:background="@drawable/bg">
-
+    android:orientation="vertical"
+    android:background="@drawable/bg"
+    >
     <Button
         android:id="@+id/btnReplay"
-         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:background="@drawable/start_btn"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:background="@drawable/my_btn"
         android:text="@string/replay_or_send_re" 
         android:onClick="replay" />
 
     <Button
         android:id="@+id/btnSend"
-         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:background="@drawable/start_btn"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:background="@drawable/my_btn"
         android:text="@string/replay_or_send_se"
         android:onClick="goToList"/>
-	<FrameLayout
-	    android:layout_width="match_parent"
-	    android:layout_height="fill_parent"
-	    android:layout_weight="1"
-	    />
-</RelativeLayout>
+
+</LinearLayout>
