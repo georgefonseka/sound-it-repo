@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:background="@drawable/bg"
     >
-
+    
     <Button
         android:id="@+id/mElementButton1"
         android:layout_width="match_parent"
@@ -27,4 +27,9 @@
         android:background="@drawable/my_btn"
         android:onClick="goToRecording" />
 
+   	<FrameLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="fill_parent"
+	    android:layout_weight="1"
+	    />
 </LinearLayout>

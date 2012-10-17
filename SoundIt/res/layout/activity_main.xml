@@ -6,14 +6,24 @@
     android:background="@drawable/bg">
 	<Button
         android:id="@+id/imageButtonSelector"
-        android:layout_width="match_parent"
+       
+        android:layout_width="wrap_content"
         android:layout_height="fill_parent"
         android:layout_weight="1"
-        android:gravity="center"
-        android:text="@string/home_play"
+        android:maxLines="1"
+        android:textSize="50dp"
+        android:shadowDy="1"
+        android:shadowColor="#ffffff"
+        android:shadowRadius="1"
+        android:paddingLeft="30dp"
+        android:paddingRight="50dp"
+        android:textColor="#00adee"
+        android:gravity="center_vertical"
         android:drawableLeft="@drawable/thing"
-        android:onClick="goToPlay"
         android:background="@drawable/my_btn"
+       
+        android:onClick="goToPlay"
+        android:text="@string/home_play"
         />
      
   
@@ -25,15 +35,18 @@
         android:layout_weight="1"
         android:maxLines="1"
         android:textSize="50dp"
-        android:paddingLeft="20dp"
+        android:shadowDy="1"
+        android:shadowColor="#ffffff"
+        android:shadowRadius="1"
+        android:paddingLeft="30dp"
         android:paddingRight="50dp"
         android:textColor="#00adee"
-        android:gravity="center"
-        android:drawableLeft="@drawable/thing"
+        android:gravity="center_vertical"
+        android:drawableLeft="@drawable/guess_icon"
         android:background="@drawable/my_btn"
         
         android:onClick="goToGuess"
-        android:text="@string/home_play"
+        android:text="@string/home_guess"
         
         />
 
@@ -45,11 +58,14 @@
         android:layout_weight="1"
         android:maxLines="1"
         android:textSize="50dp"
-        android:paddingLeft="20dp"
+        android:shadowDy="1"
+        android:shadowColor="#ffffff"
+        android:shadowRadius="1"
+        android:paddingLeft="30dp"
         android:paddingRight="50dp"
         android:textColor="#00adee"
-        android:gravity="center"
-        android:drawableLeft="@drawable/thing"
+        android:gravity="center_vertical"
+        android:drawableLeft="@drawable/tut_icon"
         android:background="@drawable/my_btn"
         
         android:text="@string/home_tutorial" />

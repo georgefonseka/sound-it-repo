@@ -1,26 +1,38 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
-
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg"
+    >
     <Button
         android:id="@+id/btnFromGeorge"
-        android:layout_width="wrap_content"
-        android:layout_height="230dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:textColor="#00adee"
+        android:gravity="center"
+        android:background="@drawable/my_btn"
+        
         android:text="@string/sound_George" 
         android:onClick="goToGuessPage"/>
 
     <Button
         android:id="@+id/btnFromShu"
-        android:layout_width="wrap_content"
-        android:layout_height="230dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/btnFromGeorge"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:textColor="#00adee"
+        android:gravity="center"
+        android:background="@drawable/my_btn"
+        
         android:text="@string/sound_Shu" 
         android:onClick="goToGuessPage"/>
+    
+    <FrameLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="fill_parent"
+	    android:layout_weight="1"
+	    />
 
-</RelativeLayout>
+</LinearLayout>

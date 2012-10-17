@@ -34,11 +34,13 @@ public class MainActivity extends Activity implements OnInitListener {
         setContentView(R.layout.activity_main);       
         
         //this thing is use to initiate the font
-        TextView txt = (TextView) findViewById(R.id.imageButtonSelector); 
-        TextView text = (TextView) findViewById(R.id.guessing_btn);
+        TextView play = (TextView) findViewById(R.id.imageButtonSelector); 
+        TextView guess = (TextView) findViewById(R.id.guessing_btn);
+        TextView tutor =(TextView) findViewById(R.id.tutorial_btn);
 		Typeface myfont = Typeface.createFromAsset(getAssets(), "fonts/Sansation_Bold.ttf");
-		txt.setTypeface(myfont);
-		text.setTypeface(myfont);
+		play.setTypeface(myfont);
+		guess.setTypeface(myfont);
+		tutor.setTypeface(myfont);
     }
     
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
