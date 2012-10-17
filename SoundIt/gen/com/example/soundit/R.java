@@ -63,8 +63,11 @@ public final class R {
         public static final int cat=0x7f040001;
         public static final int clap=0x7f040002;
         public static final int dog=0x7f040003;
-        public static final int pig=0x7f040004;
-        public static final int snake=0x7f040005;
+        public static final int guitar=0x7f040004;
+        public static final int pig=0x7f040005;
+        public static final int siren=0x7f040006;
+        public static final int snake=0x7f040007;
+        public static final int tram=0x7f040008;
     }
     public static final class string {
         public static final int app_name=0x7f050000;
