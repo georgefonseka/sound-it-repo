@@ -50,7 +50,13 @@ public class ApplicationProperties {
     	list.add(new SoundResource("dog",R.raw.dog));
     	list.add(new SoundResource("pig",R.raw.pig));
     	list.add(new SoundResource("snake",R.raw.snake));
-    	// list.add(new SoundResource("",R.raw));
+    	list.add(new SoundResource("motorbike",R.raw.bike));
+    	list.add(new SoundResource("guitar",R.raw.guitar));
+    	list.add(new SoundResource("train",R.raw.tram));
+    	list.add(new SoundResource("siren",R.raw.siren));
+    	// shuffle so we get a different order
+    	Collections.shuffle(list);
+    	
     	return list;
     }
     
