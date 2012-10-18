@@ -8,23 +8,42 @@
     
     <Button
         android:id="@+id/mElementButton1"
-        android:layout_width="match_parent"
+        
+        android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_weight="1"
-        android:text="@string/home_play"
+        android:maxLines="1"
+        android:textSize="40sp"
+        android:paddingLeft="10sp"
+        android:shadowDy="1"
+        android:shadowColor="#ffffff"
+        android:shadowRadius="1"
         android:textColor="#00adee"
-        android:gravity="center"
+        android:gravity="center_vertical"
+        
+        android:drawableLeft="@drawable/icon_temp"
         android:background="@drawable/my_btn"
+        
+        
         android:onClick="goToRecording" />
 
     <Button
         android:id="@+id/mElementButton2"
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_weight="1"
+        android:maxLines="1"
+        android:textSize="40sp"
+        android:paddingLeft="10sp"
+        android:shadowDy="1"
+        android:shadowColor="#ffffff"
+        android:shadowRadius="1"
         android:textColor="#00adee"
-        android:gravity="center"
+        android:gravity="center_vertical"
+        
+        android:drawableLeft="@drawable/icon_temp"
         android:background="@drawable/my_btn"
+        
         android:onClick="goToRecording" />
 
    	<FrameLayout

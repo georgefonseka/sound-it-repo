@@ -3,25 +3,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/bg">
+    android:background="@drawable/animated">
 	<Button
         android:id="@+id/imageButtonSelector"
        
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_weight="1"
         android:maxLines="1"
-        android:textSize="50dp"
+        android:textSize="40dp"
+        android:paddingLeft="10dp"
         android:shadowDy="1"
         android:shadowColor="#ffffff"
         android:shadowRadius="1"
-        android:paddingLeft="30dp"
-        android:paddingRight="50dp"
         android:textColor="#00adee"
         android:gravity="center_vertical"
-        android:drawableLeft="@drawable/thing"
         android:background="@drawable/my_btn"
+        
        
+        android:drawableLeft="@drawable/icon_start"
         android:onClick="goToPlay"
         android:text="@string/home_play"
         />
@@ -30,19 +30,18 @@
     <Button
         android:id="@+id/guessing_btn"
       
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_weight="1"
         android:maxLines="1"
-        android:textSize="50dp"
+        android:textSize="40sp"
+        android:paddingLeft="10sp"
         android:shadowDy="1"
         android:shadowColor="#ffffff"
         android:shadowRadius="1"
-        android:paddingLeft="30dp"
-        android:paddingRight="50dp"
         android:textColor="#00adee"
         android:gravity="center_vertical"
-        android:drawableLeft="@drawable/guess_icon"
+        android:drawableLeft="@drawable/icon_guess"
         android:background="@drawable/my_btn"
         
         android:onClick="goToGuess"
@@ -57,15 +56,16 @@
         android:layout_height="fill_parent"
         android:layout_weight="1"
         android:maxLines="1"
-        android:textSize="50dp"
+        android:textSize="40sp"
+        android:paddingLeft="10sp"
         android:shadowDy="1"
         android:shadowColor="#ffffff"
         android:shadowRadius="1"
-        android:paddingLeft="30dp"
-        android:paddingRight="50dp"
         android:textColor="#00adee"
         android:gravity="center_vertical"
-        android:drawableLeft="@drawable/tut_icon"
+        
+        android:drawableLeft="@drawable/icon_tut"
+        
         android:background="@drawable/my_btn"
         
         android:text="@string/home_tutorial" />

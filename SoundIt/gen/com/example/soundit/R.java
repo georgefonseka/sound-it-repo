@@ -11,30 +11,33 @@ public final class R {
     public static final class attr {
     }
     public static final class drawable {
-        public static final int background=0x7f020000;
-        public static final int bg=0x7f020001;
-        public static final int btn_active=0x7f020002;
-        public static final int btn_pressed=0x7f020003;
-        public static final int btn_up=0x7f020004;
-        public static final int guess_icon=0x7f020005;
+        public static final int animated=0x7f020000;
+        public static final int background=0x7f020001;
+        public static final int bg=0x7f020002;
+        public static final int btn_active=0x7f020003;
+        public static final int btn_pressed=0x7f020004;
+        public static final int btn_up=0x7f020005;
         public static final int ic_action_search=0x7f020006;
         public static final int ic_launcher=0x7f020007;
-        public static final int my_btn=0x7f020008;
-        public static final int start_btn=0x7f020009;
-        public static final int stop_btn=0x7f02000a;
-        public static final int thing=0x7f02000b;
-        public static final int tut_icon=0x7f02000c;
+        public static final int icon_guess=0x7f020008;
+        public static final int icon_play=0x7f020009;
+        public static final int icon_start=0x7f02000a;
+        public static final int icon_temp=0x7f02000b;
+        public static final int icon_tut=0x7f02000c;
+        public static final int my_btn=0x7f02000d;
+        public static final int start_btn=0x7f02000e;
+        public static final int stop_btn=0x7f02000f;
     }
     public static final class id {
         public static final int btnFromGeorge=0x7f080002;
         public static final int btnFromShu=0x7f080003;
         public static final int btnGeorge=0x7f080004;
         public static final int btnReplay=0x7f08000d;
-        public static final int btnReplayFriendSound=0x7f080006;
+        public static final int btnReplayFriendSound=0x7f080007;
         public static final int btnSend=0x7f08000e;
         public static final int btnShu=0x7f080005;
         public static final int btn_submit=0x7f080008;
-        public static final int edit_message=0x7f080007;
+        public static final int edit_message=0x7f080006;
         public static final int guessing_btn=0x7f08000a;
         public static final int imageButtonSelector=0x7f080009;
         public static final int mElementButton1=0x7f080000;
@@ -71,7 +74,10 @@ public final class R {
         public static final int pig=0x7f040006;
         public static final int siren=0x7f040007;
         public static final int snake=0x7f040008;
-        public static final int tram=0x7f040009;
+        public static final int test1=0x7f040009;
+        public static final int test2=0x7f04000a;
+        public static final int test3=0x7f04000b;
+        public static final int tram=0x7f04000c;
     }
     public static final class string {
         public static final int app_name=0x7f050000;

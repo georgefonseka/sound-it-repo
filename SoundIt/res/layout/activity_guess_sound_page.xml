@@ -5,39 +5,66 @@
     android:orientation="vertical"
     android:background="@drawable/bg"
     >
-   
-    <Button
-        android:id="@+id/btnReplayFriendSound"
-        android:layout_width="match_parent"
-        android:layout_height="fill_parent"
-        android:layout_weight="1"
-        android:textColor="#00adee"
-        android:gravity="center"
-        android:background="@drawable/my_btn"
-        android:onClick="replay"
-        android:text="@string/guess_replay" />
-
-    <EditText
+    
+    <!-- making the single line true, will turn off the
+    	keyboard if people hit enter(temoporary solution)
+      -->
+   <EditText
         android:id="@+id/edit_message"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_weight="1"
+        android:singleLine="true"
         android:color="#00adee"
         android:textColor="#00adee"
-        android:gravity="top"
+        android:gravity="center"
         android:ems="10"
-        android:textSize="30dp"
+        android:textSize="50dp"
         android:hint="@string/guess_edit_message" />
+   
+    
+
+    
 
     <Button
         android:id="@+id/btn_submit"
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_weight="1"
+        android:maxLines="1"
+        android:textSize="40sp"
+        android:paddingLeft="10sp"
+        android:shadowDy="1"
+        android:shadowColor="#ffffff"
+        android:shadowRadius="1"
         android:textColor="#00adee"
-        android:gravity="center"
+        android:gravity="center_vertical"
+        
+        android:drawableLeft="@drawable/icon_temp"
+        
         android:background="@drawable/my_btn"
         android:text="@string/guess_submit" 
         android:onClick="goBackHome"/>
 
+    
+    <Button
+        android:id="@+id/btnReplayFriendSound"
+        
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:maxLines="1"
+        android:textSize="40sp"
+        android:paddingLeft="10sp"
+        android:shadowDy="1"
+        android:shadowColor="#ffffff"
+        android:shadowRadius="1"
+        android:textColor="#00adee"
+        android:gravity="center_vertical"
+        
+        android:drawableLeft="@drawable/icon_temp"
+        android:background="@drawable/my_btn"
+        
+        android:onClick="replay"
+        android:text="@string/guess_replay" />
 </LinearLayout>
