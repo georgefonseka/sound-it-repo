@@ -125,11 +125,11 @@ public class GuessSoundPage extends TalkingActivity implements SensorEventListen
     		tries++;
     		String hint = createHint(tries,soundName);
     		speak(hint);
-        	Toast toast = Toast.makeText(this, hint, Toast.LENGTH_SHORT);
+        	Toast toast = Toast.makeText(this, hint, Toast.LENGTH_LONG);
         	toast.show();
     		
     	} else {
-    		String msg = "Sorry. The correct answer was " + soundName;
+    		String msg = "Sorry, \"" + soundName + "\" was the correct answer.";
     		if(soundName.equals(answer)) {
     			msg = "You are correct!";
     		}
@@ -145,7 +145,7 @@ public class GuessSoundPage extends TalkingActivity implements SensorEventListen
     	        	Intent intent = new Intent(GuessSoundPage.this, MainActivity.class);
     	        	startActivity(intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
     	        }
-            }, 2000);
+            }, 3500);
     		
 	        // Do something in response to button
 	    	
@@ -154,11 +154,11 @@ public class GuessSoundPage extends TalkingActivity implements SensorEventListen
     
     private String createHint(int tries, String word) {
     	if(tries == 1) {
-    		return "Incorrect. The word has " + word.length() + " letters.";
+    		return "Incorrect. The word has " + word.length() + " letters. You have three more guesses.";
     	} else if(tries == 2) {
-    		return "Incorrect. The word begins with a '" + word.charAt(0) + "'";
+    		return "Incorrect. The word begins with a '" + word.charAt(0) + "'. You have two more guesses.";
     	} else {
-    		return "Incorrect. The word ends with a '" + word.charAt(word.length() - 1) + "'";
+    		return "Incorrect. The word ends with a '" + word.charAt(word.length() - 1) + "'. You have one more guess.";
     	}
     }
 
@@ -179,7 +179,7 @@ public class GuessSoundPage extends TalkingActivity implements SensorEventListen
 
 	@Override
 	public String getShortMessage() {
-		return "Guess the sound";
+		return "Guess the sound. You have four guesses.";
 	}
 
 	public void onAccuracyChanged(Sensor sensor, int accuracy) {
