@@ -20,6 +20,7 @@ public class MainActivity extends TalkingActivity {
         setContentView(R.layout.activity_main);       
         
         //this thing is use to initiate the font
+        TextView my_score =(TextView) findViewById(R.id.my_score);
         TextView play = (TextView) findViewById(R.id.imageButtonSelector); 
         TextView guess = (TextView) findViewById(R.id.guessing_btn);
         TextView tutor =(TextView) findViewById(R.id.tutorial_btn);
@@ -27,6 +28,7 @@ public class MainActivity extends TalkingActivity {
 		play.setTypeface(myfont);
 		guess.setTypeface(myfont);
 		tutor.setTypeface(myfont);
+		my_score.setTypeface(myfont);
     }
 	
     @Override

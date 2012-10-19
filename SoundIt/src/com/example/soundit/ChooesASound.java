@@ -5,10 +5,12 @@ import java.util.List;
 
 import android.os.Bundle;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.support.v4.app.NavUtils;
 
 public class ChooesASound extends TalkingActivity {
@@ -36,7 +38,12 @@ public class ChooesASound extends TalkingActivity {
         mElementButton2.setContentDescription(sounds.get(1));
         
         //getActionBar().setDisplayHomeAsUpEnabled(true);
-        
+        //this thing is use to initiate the font
+        TextView element1 =(TextView) findViewById(R.id.mElementButton1);
+        TextView element2 =(TextView) findViewById(R.id.mElementButton2);
+		Typeface myfont = Typeface.createFromAsset(getAssets(), "fonts/Sansation_Bold.ttf");
+		element1.setTypeface(myfont);
+		element2.setTypeface(myfont);
         
     }
 

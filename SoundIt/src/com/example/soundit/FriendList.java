@@ -3,9 +3,11 @@ package com.example.soundit;
 import android.os.Bundle;
 import android.os.Handler;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.support.v4.app.NavUtils;
 
@@ -16,6 +18,12 @@ public class FriendList extends TalkingActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_friend_list);
        // getActionBar().setDisplayHomeAsUpEnabled(true);
+        
+        TextView element1 =(TextView) findViewById(R.id.btnGeorge);
+        TextView element2 =(TextView) findViewById(R.id.btnShu);
+		Typeface myfont = Typeface.createFromAsset(getAssets(), "fonts/Sansation_Bold.ttf");
+		element1.setTypeface(myfont);
+		element2.setTypeface(myfont);
     }
 
     @Override

@@ -26,5 +26,6 @@
     <string name="guess_replay">Replay</string>
     <string name="guess_edit_message">input answer</string>
     <string name="guess_submit">Submit</string>
+    <string name="my_score">Something</string>
 
 </resources>

@@ -1,6 +1,7 @@
 package com.example.soundit;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -14,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class GuessSoundPage extends TalkingActivity implements SensorEventListener {
@@ -47,6 +49,15 @@ public class GuessSoundPage extends TalkingActivity implements SensorEventListen
         accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         
         setContentView(R.layout.activity_guess_sound_page);
+        
+      //this thing is use to initiate the font
+        TextView element1 =(TextView) findViewById(R.id.edit_message);
+        TextView element2 =(TextView) findViewById(R.id.btn_submit);
+        TextView element3 =(TextView) findViewById(R.id.btnReplayFriendSound);
+		Typeface myfont = Typeface.createFromAsset(getAssets(), "fonts/Sansation_Bold.ttf");
+		element1.setTypeface(myfont);
+		element2.setTypeface(myfont);
+		element3.setTypeface(myfont);
     }
     
     private void playSound(int rid) {

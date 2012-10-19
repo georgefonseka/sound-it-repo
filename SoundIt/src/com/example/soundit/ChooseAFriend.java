@@ -1,12 +1,14 @@
 package com.example.soundit;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 public class ChooseAFriend extends TalkingActivity {
 
@@ -18,6 +20,13 @@ public class ChooseAFriend extends TalkingActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_afriend);
         // getActionBar().setDisplayHomeAsUpEnabled(true);
+        
+      //this thing is use to initiate the font
+        TextView element1 =(TextView) findViewById(R.id.btnFromGeorge);
+        TextView element2 =(TextView) findViewById(R.id.btnFromShu);
+		Typeface myfont = Typeface.createFromAsset(getAssets(), "fonts/Sansation_Bold.ttf");
+		element1.setTypeface(myfont);
+		element2.setTypeface(myfont);
     }
 
     @Override

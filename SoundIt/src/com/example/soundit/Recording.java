@@ -3,6 +3,7 @@ package com.example.soundit;
 import java.io.IOException;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.media.MediaPlayer;
 import android.media.MediaRecorder;
 import android.os.Bundle;
@@ -10,6 +11,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 
 public class Recording extends TalkingActivity {
@@ -26,6 +28,10 @@ public class Recording extends TalkingActivity {
         mSoundSuggestion = getIntent().getExtras().getString("soundSuggestion");
         setContentView(R.layout.activity_recording);
         
+        TextView element1 =(TextView) findViewById(R.id.record_button);
+		Typeface myfont = Typeface.createFromAsset(getAssets(), "fonts/Sansation_Bold.ttf");
+		element1.setTypeface(myfont);
+		
         mButton = (Button) findViewById(R.id.record_button);
     }
     

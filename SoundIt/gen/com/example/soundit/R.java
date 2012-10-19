@@ -32,19 +32,21 @@ public final class R {
         public static final int btnFromGeorge=0x7f080002;
         public static final int btnFromShu=0x7f080003;
         public static final int btnGeorge=0x7f080004;
-        public static final int btnReplay=0x7f08000d;
-        public static final int btnReplayFriendSound=0x7f080007;
-        public static final int btnSend=0x7f08000e;
+        public static final int btnReplay=0x7f08000e;
+        public static final int btnReplayFriendSound=0x7f080008;
+        public static final int btnSend=0x7f08000f;
         public static final int btnShu=0x7f080005;
-        public static final int btn_submit=0x7f080008;
+        public static final int btn_submit=0x7f080007;
         public static final int edit_message=0x7f080006;
-        public static final int guessing_btn=0x7f08000a;
-        public static final int imageButtonSelector=0x7f080009;
+        public static final int guessing_btn=0x7f08000b;
+        public static final int id=0x7f080009;
+        public static final int imageButtonSelector=0x7f08000a;
         public static final int mElementButton1=0x7f080000;
         public static final int mElementButton2=0x7f080001;
-        public static final int menu_settings=0x7f08000f;
-        public static final int record_button=0x7f08000c;
-        public static final int tutorial_btn=0x7f08000b;
+        public static final int menu_settings=0x7f080011;
+        public static final int my_score=0x7f080010;
+        public static final int record_button=0x7f08000d;
+        public static final int tutorial_btn=0x7f08000c;
     }
     public static final class layout {
         public static final int activity_chooes_asound=0x7f030000;
@@ -54,6 +56,7 @@ public final class R {
         public static final int activity_main=0x7f030004;
         public static final int activity_recording=0x7f030005;
         public static final int activity_send_friend=0x7f030006;
+        public static final int score=0x7f030007;
     }
     public static final class menu {
         public static final int activity_chooes_asound=0x7f070000;
@@ -93,6 +96,7 @@ public final class R {
         public static final int list_George=0x7f050011;
         public static final int list_Shu=0x7f050012;
         public static final int menu_settings=0x7f050002;
+        public static final int my_score=0x7f05001a;
         public static final int recording_record=0x7f05000b;
         public static final int recording_stop=0x7f05000c;
         public static final int replay_or_send_re=0x7f05000e;

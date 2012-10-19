@@ -3,23 +3,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/animated">
-	<Button
-        android:id="@+id/imageButtonSelector"
-       
+    android:background="@drawable/bg">
+    <include  layout="@layout/score" 
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_weight="1"
+        android:id="@+id/id" />
+	
+	<Button
+        android:id="@+id/imageButtonSelector"
+		
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        
+        
+        android:paddingLeft="10dp"
         android:maxLines="1"
         android:textSize="40dp"
-        android:paddingLeft="10dp"
         android:shadowDy="1"
         android:shadowColor="#ffffff"
         android:shadowRadius="1"
         android:textColor="#00adee"
         android:gravity="center_vertical"
         android:background="@drawable/my_btn"
-        
        
         android:drawableLeft="@drawable/icon_start"
         android:onClick="goToPlay"
@@ -33,17 +40,19 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_weight="1"
+        
+        
+        android:paddingLeft="10dp"
         android:maxLines="1"
-        android:textSize="40sp"
-        android:paddingLeft="10sp"
+        android:textSize="40dp"
         android:shadowDy="1"
         android:shadowColor="#ffffff"
         android:shadowRadius="1"
         android:textColor="#00adee"
         android:gravity="center_vertical"
-        android:drawableLeft="@drawable/icon_guess"
         android:background="@drawable/my_btn"
         
+        android:drawableLeft="@drawable/icon_guess"
         android:onClick="goToGuess"
         android:text="@string/home_guess"
         

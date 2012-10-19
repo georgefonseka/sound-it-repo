@@ -5,10 +5,12 @@ import java.io.IOException;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 import android.support.v4.app.NavUtils;
 
 public class SendFriend extends TalkingActivity {
@@ -22,6 +24,12 @@ public class SendFriend extends TalkingActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_send_friend);
         //getActionBar().setDisplayHomeAsUpEnabled(true);
+        
+        TextView element2 =(TextView) findViewById(R.id.btnSend);
+        TextView element1 =(TextView) findViewById(R.id.btnReplay);
+		Typeface myfont = Typeface.createFromAsset(getAssets(), "fonts/Sansation_Bold.ttf");
+		element1.setTypeface(myfont);
+		element2.setTypeface(myfont);
     }
 
     @Override
