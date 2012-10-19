@@ -25,7 +25,9 @@ public class GuessSoundPage extends TalkingActivity implements SensorEventListen
 	
 	private String soundName;
 	private int soundResourceId;
+	private int points;
 	private MediaPlayer mediaPlayer;
+	
 	private SensorManager sensorManager;
 	private Sensor accelerometer;
 	private int tries;
@@ -44,6 +46,7 @@ public class GuessSoundPage extends TalkingActivity implements SensorEventListen
         Bundle bundle = getIntent().getExtras();
         soundName = bundle.getString("sound_name");
     	soundResourceId = bundle.getInt("sound_resource_id");
+    	points = 4;
     	
     	sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
         accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
@@ -122,6 +125,7 @@ public class GuessSoundPage extends TalkingActivity implements SensorEventListen
     	EditText input = (EditText)findViewById(R.id.edit_message); 
     	String answer = input.getText().toString().toLowerCase();
     	if(tries < 3 && !soundName.equals(answer)) {
+    		points--;
     		tries++;
     		String hint = createHint(tries,soundName);
     		speak(hint);
@@ -131,7 +135,11 @@ public class GuessSoundPage extends TalkingActivity implements SensorEventListen
     	} else {
     		String msg = "Sorry, \"" + soundName + "\" was the correct answer.";
     		if(soundName.equals(answer)) {
-    			msg = "You are correct!";
+    			msg = "You are correct! You've earned " + points + " points.";
+    			
+    			// add points
+    			ApplicationProperties ap = ApplicationProperties.getInstance();
+    			ap.setPoints(ap.getPoints() + points);
     		}
     		speak(msg);
         	Toast toast = Toast.makeText(this, msg, Toast.LENGTH_SHORT);

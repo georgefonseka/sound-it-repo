@@ -48,6 +48,13 @@ public class MainActivity extends TalkingActivity {
     	Intent intent = new Intent(this, ChooseAFriend.class);
     	startActivity(intent);
     }
+    
+    @Override
+    public void onStart() {
+    	super.onStart();
+    	TextView score =(TextView) findViewById(R.id.my_score);
+    	score.setText("Score: " + ApplicationProperties.getInstance().getPoints() + " pts");
+    }
 
 	@Override
 	public String getUtteranceId() {

@@ -19,6 +19,7 @@ public class ApplicationProperties {
     private List<String> soundSuggestions;
     private List<String> playedSoundSuggestions;
     private List<SoundResource> soundResources;
+    private int points;
 
     private ApplicationProperties() {
     	Log.d(LOG_TAG, "Instantiating application properties." );
@@ -37,6 +38,14 @@ public class ApplicationProperties {
     	
     	// list of sound resources
     	soundResources = createSoundResources();
+    }
+    
+    public int getPoints() {
+    	return points;
+    }
+    
+    public void setPoints(int p) {
+    	this.points = p;
     }
     
     public static ApplicationProperties getInstance(){
