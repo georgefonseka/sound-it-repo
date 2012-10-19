@@ -38,7 +38,7 @@
         android:gravity="center_vertical"
         android:background="@drawable/my_btn"
         
-        android:drawableLeft="@drawable/icon_temp"
+        android:drawableLeft="@drawable/icon_send"
         android:text="@string/guess_submit" 
         android:onClick="goBackHome"/>
 
@@ -61,7 +61,7 @@
         android:gravity="center_vertical"
         android:background="@drawable/my_btn"
         
-        android:drawableLeft="@drawable/icon_temp"        
+        android:drawableLeft="@drawable/icon_replay"        
         android:onClick="replay"
         android:text="@string/guess_replay" />
 </LinearLayout>

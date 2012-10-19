@@ -24,7 +24,7 @@
         android:gravity="center_vertical"
         android:background="@drawable/my_btn"
         
-		android:drawableLeft="@drawable/icon_temp"
+		android:drawableLeft="@drawable/icon_replay"
         android:text="@string/replay_or_send_re" 
         android:onClick="replay" />
 
@@ -46,7 +46,7 @@
         android:gravity="center_vertical"
         android:background="@drawable/my_btn"	
 	
-        android:drawableLeft="@drawable/icon_temp"
+        android:drawableLeft="@drawable/icon_send"
         android:text="@string/replay_or_send_se"
         android:onClick="goToList"/>
     
