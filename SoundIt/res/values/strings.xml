@@ -27,5 +27,8 @@
     <string name="guess_edit_message">input answer</string>
     <string name="guess_submit">Submit</string>
     <string name="my_score">Something</string>
+    <string name="title_activity_continue">Continue</string>
+    <string name="button_end">End game</string>
+    <string name="button_reply">Reply</string>
 
 </resources>

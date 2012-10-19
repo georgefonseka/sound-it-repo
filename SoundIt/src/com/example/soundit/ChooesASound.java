@@ -1,31 +1,30 @@
 package com.example.soundit;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import android.os.Bundle;
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.os.Bundle;
+import android.support.v4.app.NavUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.support.v4.app.NavUtils;
 
 public class ChooesASound extends TalkingActivity {
-    //ElementButton1 mElementButton1 = null;
-	//ElementButton2 mElementButton2 = null;
-	private ArrayList<String> Candidates=new ArrayList<String>();
+	
+	private String receiver;
 
-	int tempNum1 = 0;
-	int tempNum2 = 0;
-	int dpi = 319;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
     	super.onCreate(savedInstanceState);
    
+    	Bundle bundle = getIntent().getExtras();
+    	if(bundle != null) {
+    		receiver = bundle.getString("sound_receiver");
+    	}
         setContentView(R.layout.activity_chooes_asound);
         
         Button mElementButton1=(Button)super.findViewById(R.id.mElementButton1);
@@ -69,37 +68,9 @@ public class ChooesASound extends TalkingActivity {
         // Do something in response to button
     	Intent intent = new Intent(this, Recording.class);
     	intent.putExtra("soundSuggestion", b.getText());
+    	intent.putExtra("sound_receiver", receiver);
     	startActivity(intent);
     }
-    
-    public void setRandomSound(){
-
-    	tempNum1 = (int) Math.round(Math.random()*(Candidates.size()-1));
-    	tempNum2 = (int) Math.round(Math.random()*(Candidates.size()-1));
-    	while(tempNum1==tempNum2){
-    		tempNum2 = (int) (Math.random()*(Candidates.size()-1));	
-    	}
-
-    }
-    /*
-    class ElementButton1 extends Button {
-
-		public ElementButton1(Context context) {
-			super(context);
-			setText(Candidates.get(tempNum1)+"tempNum1");
-			System.out.println("setText(Candidates.get(tempNum1)+tempNum1);"+Candidates.get(tempNum1)+"tempNum1");
-		}
-
-    }
-    class ElementButton2 extends Button {
-
-		public ElementButton2(Context context) {
-			super(context);
-			setText(Candidates.get(tempNum2)+"tempNum2");
-		}
-
-    }
-*/
 
 	@Override
 	public String getUtteranceId() {

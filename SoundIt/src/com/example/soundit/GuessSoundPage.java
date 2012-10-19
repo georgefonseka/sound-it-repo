@@ -25,6 +25,7 @@ public class GuessSoundPage extends TalkingActivity implements SensorEventListen
 	
 	private String soundName;
 	private int soundResourceId;
+	private String sender;
 	private int points;
 	private MediaPlayer mediaPlayer;
 	
@@ -46,6 +47,7 @@ public class GuessSoundPage extends TalkingActivity implements SensorEventListen
         Bundle bundle = getIntent().getExtras();
         soundName = bundle.getString("sound_name");
     	soundResourceId = bundle.getInt("sound_resource_id");
+    	sender = bundle.getString("sound_sender");
     	points = 4;
     	
     	sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
@@ -150,8 +152,9 @@ public class GuessSoundPage extends TalkingActivity implements SensorEventListen
     	        new Runnable() {
     	        public void run() {
     	        	 // Do something in response to button
-    	        	Intent intent = new Intent(GuessSoundPage.this, MainActivity.class);
-    	        	startActivity(intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+    	        	Intent intent = new Intent(GuessSoundPage.this, Continue.class);
+    	        	intent.putExtra("sound_sender", sender);
+    	        	startActivity(intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY));
     	        }
             }, 3500);
     		

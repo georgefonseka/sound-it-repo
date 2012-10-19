@@ -1,5 +1,7 @@
 package com.example.soundit;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -20,15 +22,15 @@ public class MainActivity extends TalkingActivity {
         setContentView(R.layout.activity_main);       
         
         //this thing is use to initiate the font
-        TextView my_score =(TextView) findViewById(R.id.my_score);
+        TextView score = (TextView) findViewById(R.id.my_score);
         TextView play = (TextView) findViewById(R.id.imageButtonSelector); 
         TextView guess = (TextView) findViewById(R.id.guessing_btn);
-        TextView tutor =(TextView) findViewById(R.id.tutorial_btn);
+        TextView tutor = (TextView) findViewById(R.id.tutorial_btn);
 		Typeface myfont = Typeface.createFromAsset(getAssets(), "fonts/Sansation_Bold.ttf");
 		play.setTypeface(myfont);
 		guess.setTypeface(myfont);
 		tutor.setTypeface(myfont);
-		my_score.setTypeface(myfont);
+		score.setTypeface(myfont);
     }
 	
     @Override
@@ -46,7 +48,7 @@ public class MainActivity extends TalkingActivity {
     public void goToGuess(View view) {
         // Do something in response to button
     	Intent intent = new Intent(this, ChooseAFriend.class);
-    	startActivity(intent);
+    	startActivity(intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY));
     }
     
     @Override
@@ -74,6 +76,22 @@ public class MainActivity extends TalkingActivity {
 	@Override
 	public String getShortMessage() {
 		return "Home page.";
+	}
+	
+	@Override
+	public void onBackPressed() {
+	    new AlertDialog.Builder(this)
+	        .setIcon(android.R.drawable.ic_dialog_alert)
+	        .setTitle("Exit SoundIt")
+	        .setMessage("Are you sure you want exit?")
+	        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+		        public void onClick(DialogInterface dialog, int which) {
+		            finish();    
+		        }
+		
+		    })
+	    .setNegativeButton("No", null)
+	    .show();
 	}
 }
 

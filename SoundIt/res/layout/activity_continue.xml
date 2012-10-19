@@ -1,0 +1,53 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg"
+    >
+    
+    <Button
+        android:id="@+id/btnReply"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        
+        
+        android:paddingLeft="10dp"
+        android:maxLines="1"
+        android:textSize="40dp"
+        android:shadowDy="1"
+        android:shadowColor="#ffffff"
+        android:shadowRadius="1"
+        android:textColor="#00adee"
+        android:gravity="center_vertical"
+        android:background="@drawable/my_btn"
+        
+        android:drawableLeft="@drawable/icon_temp"
+        android:text="@string/button_reply" 
+        android:onClick="onReply"/>
+
+    <Button
+        android:id="@+id/btnEndGame"
+        
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        
+        
+        android:paddingLeft="10dp"
+        android:maxLines="1"
+        android:textSize="40dp"
+        android:shadowDy="1"
+        android:shadowColor="#ffffff"
+        android:shadowRadius="1"
+        android:textColor="#00adee"
+        android:gravity="center_vertical"
+        android:background="@drawable/my_btn"
+        
+        android:drawableLeft="@drawable/icon_temp"
+        android:text="@string/button_end" 
+        android:onClick="onEnd"/>
+
+
+</LinearLayout>

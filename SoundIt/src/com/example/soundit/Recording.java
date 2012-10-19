@@ -21,10 +21,15 @@ public class Recording extends TalkingActivity {
     private boolean mRecording;
     private Button mButton;
     private String mSoundSuggestion;
+    private String receiver;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Bundle bundle = getIntent().getExtras();
+    	if(bundle != null) {
+    		receiver = bundle.getString("sound_receiver");
+    	}
         mSoundSuggestion = getIntent().getExtras().getString("soundSuggestion");
         setContentView(R.layout.activity_recording);
         
@@ -48,6 +53,7 @@ public class Recording extends TalkingActivity {
         } else {
             stopRecording();
             Intent intent = new Intent(this, SendFriend.class);
+            intent.putExtra("sound_receiver", receiver);
         	startActivity(intent);
         }
     	
