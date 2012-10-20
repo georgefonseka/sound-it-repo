@@ -63,9 +63,9 @@ public class ApplicationProperties {
     	list.add(new SoundResource("guitar",R.raw.guitar));
     	list.add(new SoundResource("train",R.raw.tram));
     	list.add(new SoundResource("siren",R.raw.siren));
-    	// shuffle so we get a different order
+    	// shuffle and reverse so we get a different order
     	Collections.shuffle(list);
-    	
+    	Collections.reverse(list);
     	return list;
     }
     
@@ -85,7 +85,7 @@ public class ApplicationProperties {
 		for(int i = 0; i < soundSuggestions.size(); i++) {
 			String suggestion = soundSuggestions.get(i);
 			// check if this has already been played
-			if(playedSoundSuggestions.contains(suggestion)) {
+			if(!playedSoundSuggestions.contains(suggestion)) {
 				list.add(suggestion);
 				if(list.size() == size) {
 					break;
@@ -103,6 +103,7 @@ public class ApplicationProperties {
     
     public void addPlayedSoundSuggestion(String sound) {
     	if(sound != null && !playedSoundSuggestions.contains(sound)) {
+    		Log.d(LOG_TAG, "adding " + sound + " to played list." );
     		playedSoundSuggestions.add(sound);
     	}
     }
@@ -139,7 +140,6 @@ public class ApplicationProperties {
 		list.add("car");
 		list.add("catfish");
 		list.add("leapfrog");
-		list.add("wheelbarrow");
 		list.add("footsteps");
 
     	return list;

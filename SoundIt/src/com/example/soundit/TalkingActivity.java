@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -11,6 +12,8 @@ import android.speech.tts.TextToSpeech;
 import android.speech.tts.UtteranceProgressListener;
 import android.speech.tts.TextToSpeech.OnInitListener;
 import android.util.Log;
+import android.view.accessibility.AccessibilityManager;
+import android.widget.Toast;
 
 public abstract class TalkingActivity extends Activity implements OnInitListener{
 	
@@ -169,4 +172,22 @@ public abstract class TalkingActivity extends Activity implements OnInitListener
 		tts.speak(msg, TextToSpeech.QUEUE_ADD, null);
 	}
 
+	@SuppressLint({ "NewApi", "NewApi", "NewApi" })
+	public boolean isAccessibilityOn() {
+		AccessibilityManager accessibilityManager =
+		        (AccessibilityManager) getSystemService(Context.ACCESSIBILITY_SERVICE);
+		boolean isOn = accessibilityManager.isEnabled();
+		Log.d(LOG_TAG, "accessibility on: " + isOn );
+		return isOn;
+	}
+	
+	public void toast(String msg) {
+    	if(!isAccessibilityOn()) {
+    		Log.d(LOG_TAG, "accessibility not on, play: " + msg );
+			speak(msg);
+		}
+    	Toast toast = Toast.makeText(this, msg, Toast.LENGTH_LONG);
+    	toast.show();
+    }
+	
 }

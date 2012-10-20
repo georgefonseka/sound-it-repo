@@ -7,6 +7,7 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.media.MediaPlayer;
+import android.media.MediaPlayer.OnCompletionListener;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.NavUtils;
@@ -16,7 +17,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class GuessSoundPage extends TalkingActivity implements SensorEventListener {
 	
@@ -28,7 +28,6 @@ public class GuessSoundPage extends TalkingActivity implements SensorEventListen
 	private String sender;
 	private int points;
 	private MediaPlayer mediaPlayer;
-	private MediaPlayer tadaPlayer;
 	
 	private SensorManager sensorManager;
 	private Sensor accelerometer;
@@ -131,24 +130,20 @@ public class GuessSoundPage extends TalkingActivity implements SensorEventListen
     		points--;
     		tries++;
     		String hint = createHint(tries,soundName);
-    		speak(hint);
-        	Toast toast = Toast.makeText(this, hint, Toast.LENGTH_LONG);
-        	toast.show();
-    		
+    		playResult(hint, R.raw.incorrect);
     	} else {
-    		String msg = "Sorry, \"" + soundName + "\" was the correct answer.";
+    		
     		if(soundName.equals(answer)) {
-    			playtada();
-    			msg = "You are correct! You've earned " + points + " points.";
-    			
-    			// add points
     			ApplicationProperties ap = ApplicationProperties.getInstance();
     			ap.setPoints(ap.getPoints() + points);
+    			
+    			playResult("You are correct! You've earned " + points + " points.", R.raw.tada);
+    			
+    			// add points
+    			
+    		} else {
+	    		playResult("Sorry, \"" + soundName + "\" was the correct answer.", R.raw.incorrect);
     		}
-    		// Toast msg being read out
-    		// speak(msg);
-        	Toast toast = Toast.makeText(this, msg, Toast.LENGTH_SHORT);
-        	toast.show();
         	
         	// this might be a bit dodgy
         	new Handler().postDelayed(
@@ -159,28 +154,34 @@ public class GuessSoundPage extends TalkingActivity implements SensorEventListen
     	        	intent.putExtra("sound_sender", sender);
     	        	startActivity(intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY));
     	        }
-            }, 3500);
+            }, 4000);
     		
 	        // Do something in response to button
 	    	
     	}
     }
     
-    private void playtada() {
-		// TODO Auto-generated method stub
-    	if(tadaPlayer == null) {
-    		tadaPlayer = MediaPlayer.create(this.getApplicationContext(),R.raw.tada);
-    	}
-    	tadaPlayer.start();
+    private void playResult(final String msg, int resourceId) {
+		if(mediaPlayer.isPlaying()) {
+			mediaPlayer.stop();
+			mediaPlayer.release();
+		}
+		mediaPlayer = MediaPlayer.create(this.getApplicationContext(), resourceId);
+		mediaPlayer.setOnCompletionListener(new OnCompletionListener() {
+			public void onCompletion(MediaPlayer mp) {
+				toast(msg);
+			}
+		});
+		mediaPlayer.start();
 	}
 
 	private String createHint(int tries, String word) {
     	if(tries == 1) {
     		return "Incorrect. The word has " + word.length() + " letters. You have three more guesses.";
     	} else if(tries == 2) {
-    		return "Incorrect. The word begins with a '" + word.charAt(0) + "'. You have two more guesses.";
+    		return "Incorrect. The word begins with a \"" + word.charAt(0) + "\". You have two more guesses.";
     	} else {
-    		return "Incorrect. The word ends with a '" + word.charAt(word.length() - 1) + "'. You have one more guess.";
+    		return "Incorrect. The word ends with a \"" + word.charAt(word.length() - 1) + "\". You have one more guess.";
     	}
     }
 

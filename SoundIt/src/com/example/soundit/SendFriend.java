@@ -12,7 +12,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.support.v4.app.NavUtils;
 
 public class SendFriend extends TalkingActivity {
@@ -98,9 +97,7 @@ public class SendFriend extends TalkingActivity {
         	startActivity(intent);
     	} else {
     		// toast msg being read
-    		// speak("Your sound has been sent.");
-        	Toast toast = Toast.makeText(this, "Your sound has been sent.", Toast.LENGTH_SHORT);
-        	toast.show();
+    		toast("Your sound has been sent.");
         	
         	// this might be a bit dodgy
         	new Handler().postDelayed(
