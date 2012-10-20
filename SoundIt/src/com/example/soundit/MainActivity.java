@@ -57,7 +57,7 @@ public class MainActivity extends TalkingActivity {
     public void onStart() {
     	super.onStart();
     	TextView score =(TextView) findViewById(R.id.my_score);
-    	score.setText("Score: " + ApplicationProperties.getInstance().getPoints() + " pts");
+    	score.setText("Score: " + ApplicationProperties.getInstance().getPoints());
     }
 
 	@Override
