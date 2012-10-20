@@ -18,6 +18,8 @@ public class MainActivity extends TalkingActivity {
     public void onCreate(Bundle savedInstanceState) {
     	Log.d(LOG_TAG, "onCreate" );
         super.onCreate(savedInstanceState);
+        // hack to stop title being read out
+        setTitle("");
         
         setContentView(R.layout.activity_main);       
         

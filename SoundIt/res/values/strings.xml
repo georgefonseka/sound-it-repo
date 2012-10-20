@@ -3,7 +3,7 @@
     <string name="app_name">SoundIt</string>
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
-    <string name="title_activity_main"></string>
+    <string name="title_activity_main">SoundIt</string>
     <string name="home_play">New game</string>
     <string name="home_guess">Guess</string>
     <string name="home_tutorial">Tutorial</string>
