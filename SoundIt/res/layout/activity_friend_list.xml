@@ -14,7 +14,7 @@
         android:layout_weight="1"
         
         
-        android:paddingLeft="10dp"
+        android:paddingLeft="20dp"
         android:maxLines="1"
         android:textSize="40dp"
         android:shadowDy="1"
@@ -37,7 +37,7 @@
         android:layout_weight="1"
         
         
-        android:paddingLeft="10dp"
+        android:paddingLeft="20dp"
         android:maxLines="1"
         android:textSize="40dp"
         android:shadowDy="1"
