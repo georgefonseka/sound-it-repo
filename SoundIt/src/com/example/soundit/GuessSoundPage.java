@@ -28,6 +28,7 @@ public class GuessSoundPage extends TalkingActivity implements SensorEventListen
 	private String sender;
 	private int points;
 	private MediaPlayer mediaPlayer;
+	private MediaPlayer tadaPlayer;
 	
 	private SensorManager sensorManager;
 	private Sensor accelerometer;
@@ -48,6 +49,7 @@ public class GuessSoundPage extends TalkingActivity implements SensorEventListen
         soundName = bundle.getString("sound_name");
     	soundResourceId = bundle.getInt("sound_resource_id");
     	sender = bundle.getString("sound_sender");
+    	
     	points = 4;
     	
     	sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
@@ -136,6 +138,7 @@ public class GuessSoundPage extends TalkingActivity implements SensorEventListen
     	} else {
     		String msg = "Sorry, \"" + soundName + "\" was the correct answer.";
     		if(soundName.equals(answer)) {
+    			playtada();
     			msg = "You are correct! You've earned " + points + " points.";
     			
     			// add points
@@ -163,7 +166,15 @@ public class GuessSoundPage extends TalkingActivity implements SensorEventListen
     	}
     }
     
-    private String createHint(int tries, String word) {
+    private void playtada() {
+		// TODO Auto-generated method stub
+    	if(tadaPlayer == null) {
+    		tadaPlayer = MediaPlayer.create(this.getApplicationContext(),R.raw.tada);
+    	}
+    	tadaPlayer.start();
+	}
+
+	private String createHint(int tries, String word) {
     	if(tries == 1) {
     		return "Incorrect. The word has " + word.length() + " letters. You have three more guesses.";
     	} else if(tries == 2) {

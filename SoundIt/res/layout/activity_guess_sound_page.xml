@@ -17,6 +17,7 @@
         android:gravity="center"
         android:ems="10"
         android:textSize="50dp"
+        android:background="#ffffff"
         android:contentDescription="input answer"
         android:hint="@string/guess_edit_message"
         />

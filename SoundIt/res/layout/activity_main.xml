@@ -20,7 +20,7 @@
         
         android:paddingLeft="10dp"
         android:maxLines="1"
-        android:textSize="40dp"
+        android:textSize="35dp"
         android:shadowDy="1"
         android:shadowColor="#ffffff"
         android:shadowRadius="1"
@@ -44,7 +44,7 @@
         
         android:paddingLeft="10dp"
         android:maxLines="1"
-        android:textSize="40dp"
+        android:textSize="35dp"
         android:shadowDy="1"
         android:shadowColor="#ffffff"
         android:shadowRadius="1"
@@ -65,7 +65,7 @@
         android:layout_height="fill_parent"
         android:layout_weight="1"
         android:maxLines="1"
-        android:textSize="40sp"
+        android:textSize="35dp"
         android:paddingLeft="10sp"
         android:shadowDy="1"
         android:shadowColor="#ffffff"
