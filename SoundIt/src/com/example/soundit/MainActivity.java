@@ -85,7 +85,7 @@ public class MainActivity extends TalkingActivity {
 	    new AlertDialog.Builder(this)
 	        .setIcon(android.R.drawable.ic_dialog_alert)
 	        .setTitle("Exit SoundIt")
-	        .setMessage("Are you sure you want exit?")
+	        .setMessage("Are you sure you want to exit?")
 	        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
 		        public void onClick(DialogInterface dialog, int which) {
 		            finish();    
