@@ -75,7 +75,7 @@ public class Recording extends TalkingActivity {
 	        playSound();
 	        // change the text for the button
             mButton.setText("Stop");
-            mButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.stop_btn));
+            mButton.getResources().getDrawable(R.drawable.pu);
         } catch (IOException e) {
             Log.e(LOG_TAG, "prepare() failed");
             speak("Unable to record sound.");
@@ -100,7 +100,7 @@ public class Recording extends TalkingActivity {
 	private void reset() {
     	mRecording = false;
     	mButton.setText("Record");
-    	mButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.start_btn));
+    	mButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.ru));
     }
 
     @Override

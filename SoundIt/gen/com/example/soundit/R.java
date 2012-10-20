@@ -26,8 +26,10 @@ public final class R {
         public static final int icon_temp=0x7f02000c;
         public static final int icon_tut=0x7f02000d;
         public static final int my_btn=0x7f02000e;
-        public static final int start_btn=0x7f02000f;
-        public static final int stop_btn=0x7f020010;
+        public static final int pu=0x7f02000f;
+        public static final int ru=0x7f020010;
+        public static final int start_btn=0x7f020011;
+        public static final int stop_btn=0x7f020012;
     }
     public static final class id {
         public static final int btnEndGame=0x7f080005;
