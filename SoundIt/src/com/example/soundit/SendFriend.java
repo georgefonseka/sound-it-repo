@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.support.v4.app.NavUtils;
 
@@ -19,6 +20,8 @@ public class SendFriend extends TalkingActivity {
 	private static final String LOG_TAG = "SendFriend";
 	
 	private MediaPlayer mPlayer = null;
+	
+	private Button replayButton;
 	
 	private String receiver;
 
@@ -37,6 +40,8 @@ public class SendFriend extends TalkingActivity {
 		Typeface myfont = Typeface.createFromAsset(getAssets(), "fonts/Sansation_Bold.ttf");
 		element1.setTypeface(myfont);
 		element2.setTypeface(myfont);
+		
+		replayButton = (Button) element1;
     }
 
     @Override
@@ -58,6 +63,9 @@ public class SendFriend extends TalkingActivity {
     
     private void startPlaying() {
     	Log.d(LOG_TAG, "start playing");
+    	if(replayButton != null) {
+    		replayButton.setEnabled(false);
+    	}
     	if(mPlayer == null) {
     		mPlayer = new MediaPlayer();
     		try {
@@ -69,6 +77,13 @@ public class SendFriend extends TalkingActivity {
     	}
     	
     	if(mPlayer != null && !mPlayer.isPlaying()) {
+    		mPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {			
+				public void onCompletion(MediaPlayer mp) {
+					if(replayButton != null) {
+						replayButton.setEnabled(true);
+					}
+				}
+			});
 	        mPlayer.start();
     	}
     }
@@ -110,6 +125,14 @@ public class SendFriend extends TalkingActivity {
             }, 2500);
     	}
     	
+    }
+    
+    @Override
+    public void onRestart() {
+    	super.onRestart();
+    	if(replayButton != null) {
+    		replayButton.setEnabled(true);
+    	}
     }
     
     @Override
