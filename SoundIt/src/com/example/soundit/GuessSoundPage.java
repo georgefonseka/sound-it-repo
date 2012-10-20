@@ -154,7 +154,7 @@ public class GuessSoundPage extends TalkingActivity implements SensorEventListen
     	        	intent.putExtra("sound_sender", sender);
     	        	startActivity(intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY));
     	        }
-            }, 4000);
+            }, 5000);
     		
 	        // Do something in response to button
 	    	
