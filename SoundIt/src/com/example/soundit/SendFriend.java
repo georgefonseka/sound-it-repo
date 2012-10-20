@@ -97,7 +97,8 @@ public class SendFriend extends TalkingActivity {
     		Intent intent = new Intent(this, FriendList.class);
         	startActivity(intent);
     	} else {
-    		speak("Your sound has been sent.");
+    		// toast msg being read
+    		// speak("Your sound has been sent.");
         	Toast toast = Toast.makeText(this, "Your sound has been sent.", Toast.LENGTH_SHORT);
         	toast.show();
         	

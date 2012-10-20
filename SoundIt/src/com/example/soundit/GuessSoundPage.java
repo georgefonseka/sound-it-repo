@@ -143,7 +143,8 @@ public class GuessSoundPage extends TalkingActivity implements SensorEventListen
     			ApplicationProperties ap = ApplicationProperties.getInstance();
     			ap.setPoints(ap.getPoints() + points);
     		}
-    		speak(msg);
+    		// Toast msg being read out
+    		// speak(msg);
         	Toast toast = Toast.makeText(this, msg, Toast.LENGTH_SHORT);
         	toast.show();
         	
