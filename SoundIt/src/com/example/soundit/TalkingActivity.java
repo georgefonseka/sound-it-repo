@@ -2,10 +2,13 @@ package com.example.soundit;
 
 import java.util.HashMap;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
+import android.speech.tts.UtteranceProgressListener;
 import android.speech.tts.TextToSpeech.OnInitListener;
 import android.util.Log;
 
@@ -110,28 +113,56 @@ public abstract class TalkingActivity extends Activity implements OnInitListener
 	}
 	
 	public void onInit(int status) {
-		// TODO Auto-generated method stub
 		speak();
 	}
 	
+	@SuppressLint("NewApi")
 	@SuppressWarnings("deprecation")
 	public void speak() {
+		String message = getFullMessage();
 		if(ApplicationProperties.getInstance().getProperties().containsKey(getMessageKey())) {
-			tts.speak(getShortMessage(), TextToSpeech.QUEUE_ADD, null);
-		} else {
+			message = getShortMessage();
+		}
+		
+		if(Build.VERSION.SDK_INT < Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
+		
 			// set up onCompleteListener to we can record full instructions have been delivered once
 			tts.setOnUtteranceCompletedListener( new TextToSpeech.OnUtteranceCompletedListener() {
 				public void onUtteranceCompleted(String utteranceId) {
 					ApplicationProperties.getInstance().getProperties().put(getMessageKey(), 1);
+					afterSpeak();
 				}	
 			});
-			// params are needed to the utterence id can be passed.
-			// no utterance id results in onCompleteListener not being called
-			HashMap<String, String> params = new HashMap<String, String>();
-			params.put(TextToSpeech.Engine.KEY_PARAM_UTTERANCE_ID, getUtteranceId());
-			tts.speak(getFullMessage(),
-							TextToSpeech.QUEUE_ADD, params);
+		} else {
+			tts.setOnUtteranceProgressListener(new UtteranceProgressListener() {
+				
+				@Override
+				public void onStart(String utteranceId) {
+
+				}
+				
+				@Override
+				public void onError(String utteranceId) {
+
+				}
+				
+				@Override
+				public void onDone(String utteranceId) {
+					Log.d(LOG_TAG, "tts onDone" );
+					ApplicationProperties.getInstance().getProperties().put(getMessageKey(), 1);
+					afterSpeak();
+				}
+			});
 		}
+		// params are needed to the utterence id can be passed.
+		// no utterance id results in onCompleteListener not being called
+		HashMap<String, String> params = new HashMap<String, String>();
+		params.put(TextToSpeech.Engine.KEY_PARAM_UTTERANCE_ID, getUtteranceId());
+		tts.speak(message, TextToSpeech.QUEUE_ADD, params);
+	}
+	
+	public void afterSpeak() {
+		
 	}
 	
 	public void speak(String msg) {

@@ -75,28 +75,22 @@ public class GuessSoundPage extends TalkingActivity implements SensorEventListen
     public void replay(View v) {
     	playSound(soundResourceId);
     }
-    
-    @Override
-    public void onStart() {
-    	super.onStart();
-    	playSound(soundResourceId);
-    }
-    
+
 	@Override
-	protected void onStop() {
-		super.onStop();
+	public void onPause() {
+		Log.d(LOG_TAG, "onPause");
+		super.onPause();
+		
+		Log.d(LOG_TAG, "onPause: mediaplayer " + mediaPlayer);
 		if(mediaPlayer != null) {
+			
 			if(mediaPlayer.isPlaying()) {
 				mediaPlayer.stop();
 			}
 			mediaPlayer.release();
 			mediaPlayer = null;
 		}
-	}
-	
-	@Override
-	public void onPause() {
-		super.onPause();
+		
 		sensorManager.unregisterListener(this);
 	}
 	
@@ -121,6 +115,11 @@ public class GuessSoundPage extends TalkingActivity implements SensorEventListen
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+    
+    @Override
+    public void afterSpeak() {
+    	playSound(soundResourceId);
     }
     
     public void goBackHome(View view) {

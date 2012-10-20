@@ -17,7 +17,9 @@
         android:gravity="center"
         android:ems="10"
         android:textSize="50dp"
-        android:hint="@string/guess_edit_message"/>
+        android:contentDescription="input answer"
+        android:hint="@string/guess_edit_message"
+        />
 
 
     <Button
