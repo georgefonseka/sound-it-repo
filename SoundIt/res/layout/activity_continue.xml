@@ -49,5 +49,10 @@
         android:text="@string/button_end" 
         android:onClick="onEnd"/>
 
+    <FrameLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="fill_parent"
+	    android:layout_weight="1"
+	    />
 
 </LinearLayout>
