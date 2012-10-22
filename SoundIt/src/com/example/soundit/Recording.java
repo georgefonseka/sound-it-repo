@@ -3,7 +3,9 @@ package com.example.soundit;
 import java.io.IOException;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.media.MediaRecorder;
 import android.os.Bundle;
@@ -74,8 +76,13 @@ public class Recording extends TalkingActivity {
 	        // there seems to be a delay so we will  play the sound after start
 	        playSound();
 	        // change the text for the button
-            mButton.setText("Stop");
-            mButton.getResources().getDrawable(R.drawable.pu);
+	        Object green = this.getResources().getDrawable(R.drawable.pu);
+	        mButton.setText(getResources().getString(R.string.recording_stop));
+            mButton.setBackgroundDrawable((Drawable) green);
+            mButton.setTextColor(Color.parseColor("#63BC46"));
+            
+            
+            //mButton.getResources().getDrawable(R.drawable.pu);
         } catch (IOException e) {
             Log.e(LOG_TAG, "prepare() failed");
             speak("Unable to record sound.");
@@ -99,8 +106,10 @@ public class Recording extends TalkingActivity {
     @SuppressWarnings("deprecation")
 	private void reset() {
     	mRecording = false;
-    	mButton.setText("Record");
-    	mButton.setBackgroundDrawable(getResources().getDrawable(R.drawable.ru));
+    	 Object red = this.getResources().getDrawable(R.drawable.ru);
+    	 mButton.setText(getResources().getString(R.string.recording_record));
+         mButton.setBackgroundDrawable((Drawable) red);
+         mButton.setTextColor(Color.parseColor("#ff0000"));
     }
 
     @Override

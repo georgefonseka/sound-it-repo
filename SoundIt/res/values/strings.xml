@@ -12,7 +12,7 @@
     <string name="chooese_cat">Cat</string>
     <string name="title_activity_recording"></string>
     <string name="recording_record">REC</string>
-    <string name="recording_stop">stop</string>
+    <string name="recording_stop">STOP</string>
     <string name="title_activity_send_friend"></string>
     <string name="replay_or_send_re">Replay</string>
     <string name="replay_or_send_se">Send</string>

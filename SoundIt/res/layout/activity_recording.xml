@@ -14,7 +14,7 @@
         android:shadowDy="1"
         android:shadowColor="#ffffff"
         android:shadowRadius="1"
-        android:textColor="#ffffff"
+        android:textColor="#ff0000"
         android:textSize="40dp"
         android:text="@string/recording_record" 
         android:onClick="onClick"/>

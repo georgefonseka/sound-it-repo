@@ -5,10 +5,11 @@
     <TextView android:id="@+id/my_score"
               android:layout_width="fill_parent"
         	  android:layout_height="fill_parent"
-              android:text="Score:39pt"
               android:background="#00adee"
               android:gravity="center"
-              android:paddingLeft="30dp"
-              android:textColor="#000000"
+              android:textColor="#eeeeee"
+              android:shadowColor="#ffffff"
+              android:shadowDy="3"
+              android:shadowRadius="1"
               android:textSize="50dp"/>
 </LinearLayout>
