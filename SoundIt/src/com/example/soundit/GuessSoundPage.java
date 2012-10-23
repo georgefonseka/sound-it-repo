@@ -15,6 +15,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -28,6 +29,7 @@ public class GuessSoundPage extends TalkingActivity implements SensorEventListen
 	private String sender;
 	private int points;
 	private MediaPlayer mediaPlayer;
+	private MediaPlayer resultMediaPlayer;
 	
 	private SensorManager sensorManager;
 	private Sensor accelerometer;
@@ -36,6 +38,8 @@ public class GuessSoundPage extends TalkingActivity implements SensorEventListen
 	private float lastX;
 	private float lastY;
 	private float lastZ;
+	
+	private Button submit;
 	
 	public GuessSoundPage() {
 		
@@ -58,18 +62,18 @@ public class GuessSoundPage extends TalkingActivity implements SensorEventListen
         
       //this thing is use to initiate the font
         TextView element1 =(TextView) findViewById(R.id.edit_message);
-        TextView element2 =(TextView) findViewById(R.id.btn_submit);
         TextView element3 =(TextView) findViewById(R.id.btnReplayFriendSound);
+        submit = (Button) findViewById(R.id.btn_submit);
 		Typeface myfont = Typeface.createFromAsset(getAssets(), "fonts/Sansation_Bold.ttf");
 		element1.setTypeface(myfont);
-		element2.setTypeface(myfont);
 		element3.setTypeface(myfont);
+		submit.setTypeface(myfont);
     }
     
     private void playSound(int rid) {
-    	if(mediaPlayer == null) {
+    	//if(mediaPlayer == null) {
     		mediaPlayer = MediaPlayer.create(this.getApplicationContext(), rid);
-    	}
+    	//}
     	mediaPlayer.start();
     }
     
@@ -99,6 +103,7 @@ public class GuessSoundPage extends TalkingActivity implements SensorEventListen
 	public void onResume() {
 		super.onResume();
 		sensorManager.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_NORMAL);
+		submit.setEnabled(true);
 	}
 	
     @Override
@@ -124,55 +129,54 @@ public class GuessSoundPage extends TalkingActivity implements SensorEventListen
     }
     
     public void goBackHome(View view) {
-    	EditText input = (EditText)findViewById(R.id.edit_message); 
-    	String answer = input.getText().toString().toLowerCase();
-    	if(tries < 3 && !soundName.equals(answer)) {
-    		points--;
-    		tries++;
-    		String hint = createHint(tries,soundName);
-    		playResult(hint, R.raw.incorrect);
-    	} else {
-    		
-    		if(soundName.equals(answer)) {
-    			ApplicationProperties ap = ApplicationProperties.getInstance();
-    			ap.setPoints(ap.getPoints() + points);
-    			
-    			playResult("You are correct! You've earned " + points + " points.", R.raw.tada);
-    			
-    			// add points
-    			
-    		} else {
-	    		playResult("Sorry, \"" + soundName + "\" was the correct answer.", R.raw.incorrect);
-    		}
-        	
-        	// this might be a bit dodgy
-        	new Handler().postDelayed(
-    	        new Runnable() {
-    	        public void run() {
-    	        	 // Do something in response to button
-    	        	Intent intent = new Intent(GuessSoundPage.this, Continue.class);
-    	        	intent.putExtra("sound_sender", sender);
-    	        	startActivity(intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY));
-    	        }
-            }, 5000);
-    		
-	        // Do something in response to button
-	    	
-    	}
+    	submit.setEnabled(false);
+
+		EditText input = (EditText)findViewById(R.id.edit_message); 
+		String answer = input.getText().toString().toLowerCase();
+		if(tries < 3 && !soundName.equals(answer)) {
+			points--;
+			tries++;
+			String hint = createHint(tries,soundName);
+			playResult(hint, R.raw.incorrect, true);
+		} else {
+			
+			if(soundName.equals(answer)) {
+				ApplicationProperties ap = ApplicationProperties.getInstance();
+				ap.setPoints(ap.getPoints() + points);
+				playResult("You are correct! You've earned " + points + " points.", R.raw.tada, false);
+				
+				// add points
+				
+			} else {
+				playResult("Sorry, \"" + soundName + "\" was the correct answer.", R.raw.incorrect, false);
+			}
+			
+			// this might be a bit dodgy
+			new Handler().postDelayed(
+		        new Runnable() {
+		        public void run() {
+		        	Intent intent = new Intent(GuessSoundPage.this, Continue.class);
+		        	intent.putExtra("sound_sender", sender);
+		        	submit.setEnabled(true);
+		        	startActivity(intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY));
+		        }
+		    }, 5000);
+		}
     }
     
-    private void playResult(final String msg, int resourceId) {
-		if(mediaPlayer.isPlaying()) {
-			mediaPlayer.stop();
-			mediaPlayer.release();
+    private void playResult(final String msg, int resourceId, final boolean enabled) {
+		if(resultMediaPlayer != null && resultMediaPlayer.isPlaying()) {
+			resultMediaPlayer.stop();
+			resultMediaPlayer.release();
 		}
-		mediaPlayer = MediaPlayer.create(this.getApplicationContext(), resourceId);
-		mediaPlayer.setOnCompletionListener(new OnCompletionListener() {
+		resultMediaPlayer = MediaPlayer.create(this.getApplicationContext(), resourceId);
+		resultMediaPlayer.setOnCompletionListener(new OnCompletionListener() {
 			public void onCompletion(MediaPlayer mp) {
 				toast(msg);
+				submit.setEnabled(enabled);
 			}
 		});
-		mediaPlayer.start();
+		resultMediaPlayer.start();
 	}
 
 	private String createHint(int tries, String word) {
