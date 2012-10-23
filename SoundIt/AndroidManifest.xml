@@ -73,6 +73,13 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.soundit.MainActivity" />
         </activity>
+        <activity
+            android:name=".Tutorial"
+            android:label="@string/title_activity_tutorial" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.soundit.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

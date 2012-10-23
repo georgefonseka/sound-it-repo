@@ -6,6 +6,7 @@
     <string name="title_activity_main">SoundIt</string>
     <string name="home_play">New game</string>
     <string name="home_guess">Guess</string>
+    <string name="title_activity_tutorial">Tutorial</string>
     <string name="home_tutorial">Tutorial</string>
     <string name="title_activity_chooes_asound"></string>
     <string name="chooese_dog">Dog</string>

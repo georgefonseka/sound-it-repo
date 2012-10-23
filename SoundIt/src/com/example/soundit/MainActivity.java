@@ -53,6 +53,12 @@ public class MainActivity extends TalkingActivity {
     	startActivity(intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY));
     }
     
+    public void goToTutorial(View view) {
+        // Do something in response to button
+    	Intent intent = new Intent(this, Tutorial.class);
+    	startActivity(intent);
+    }
+    
     @Override
     public void onStart() {
     	super.onStart();
