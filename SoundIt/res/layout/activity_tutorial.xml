@@ -1,56 +1,61 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/bg" 
-    android:orientation="vertical"
-    >
+<LinearLayout 
+   xmlns:android="http://schemas.android.com/apk/res/android"
+   android:layout_height="fill_parent" 
+   android:layout_width="fill_parent">
+        <ScrollView android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+            <LinearLayout android:orientation="vertical"
+                android:layout_width="fill_parent"            
+                android:layout_height="fill_parent"
+                android:background="@drawable/bg">
 
-    <TextView
-        android:id="@+id/tutorialTitle"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:gravity="center"
-        android:text="Tutorial" 
-        android:textColor="#ffffff"
-        android:textSize="70dp"
-        android:background="#00adee"
-        />
-    <TextView
-        android:id="@+id/tutorialParagraph1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="#00adee"
-        android:gravity="left"
-        android:textSize="25dp"
-        android:paddingTop="15dp"
-        android:paddingRight="15dp"
-        android:paddingLeft="15dp"
-        android:lineSpacingMultiplier="1.1"
-        android:text="SoundIt is an audio based game for everyone." />
-    <TextView
-        android:id="@+id/tutorialParagraph2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="15dp"
-        android:paddingRight="15dp"
-        android:paddingLeft="15dp"
-        android:lineSpacingMultiplier="1.1"
-        android:gravity="left"
-        android:textColor="#00adee"
-        android:textSize="25dp"
-        android:text="To start a new game, click &quot;New game&quot; on the home page. Mimic a sound and send it to someone in your friend list." />
-    <TextView
-        android:id="@+id/tutorialParagraph3"
-        android:layout_width="wrap_content"
-        android:gravity="left"
-        android:paddingTop="15dp"
-        android:paddingRight="15dp"
-        android:lineSpacingMultiplier="1.1"
-        android:paddingLeft="15dp"
-        android:layout_height="wrap_content"
-        android:textColor="#00adee"
-        android:textSize="25dp"
-        android:text="To guess the sounds sent to you, just click &quot;Guess&quot; on the home page. Listen to the sound and type in your answer. Each time you submit an incorrect answer you will be given hint. You have a maximum of four guesses." />
-
-</LinearLayout>
+           
+		    <TextView
+		        android:id="@+id/tutorialTitle"
+		        android:layout_width="match_parent"
+		        android:layout_height="100dp"
+		        android:gravity="center"
+		        android:text="Tutorial"
+		        android:textColor="#ffffff"
+		        android:textSize="70dp"
+		        android:background="#00adee"
+		        />
+		    <TextView
+		        android:id="@+id/tutorialParagraph1"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:textColor="#00adee"
+		        android:gravity="left"
+		        android:textSize="25dp"
+		        android:paddingTop="15dp"
+		        android:paddingRight="15dp"
+		        android:paddingLeft="15dp"
+		        android:lineSpacingMultiplier="1.1"
+		        android:text="SoundIt is an audio based game for everyone." />
+		    <TextView
+		        android:id="@+id/tutorialParagraph2"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:paddingTop="15dp"
+		        android:paddingRight="15dp"
+		        android:paddingLeft="15dp"
+		        android:lineSpacingMultiplier="1.1"
+		        android:gravity="left"
+		        android:textColor="#00adee"
+		        android:textSize="25dp"
+		        android:text="To start a new game, click &quot;New game&quot; on the home page. Mimic a sound and send it to someone in your friend list." />
+		    <TextView
+		        android:id="@+id/tutorialParagraph3"
+		        android:layout_width="wrap_content"
+		        android:gravity="left"
+		        android:paddingTop="15dp"
+		        android:paddingRight="15dp"
+		        android:lineSpacingMultiplier="1.1"
+		        android:paddingLeft="15dp"
+		        android:layout_height="wrap_content"
+		        android:textColor="#00adee"
+		        android:textSize="25dp"
+		        android:text="To guess the sounds sent to you, just click &quot;Guess&quot; on the home page. Listen to the sound and type in your answer. Each time you submit an incorrect answer you will be given hint. You have a maximum of four guesses." />
+ </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
