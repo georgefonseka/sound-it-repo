@@ -14,9 +14,17 @@ public class Tutorial extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tutorial);
-        Typeface myFont = Typeface.createFromAsset(getAssets(), "fonts/Sansation_Bold.ttf");
+        
+        
+        Typeface myFont = Typeface.createFromAsset(getAssets(), "fonts/Sansation_Regular.ttf");
         TextView title = (TextView) findViewById(R.id.tutorialTitle);
+        TextView p1 = (TextView) findViewById(R.id.tutorialParagraph1);
+        TextView p2 = (TextView) findViewById(R.id.tutorialParagraph2);
+        TextView p3 = (TextView) findViewById(R.id.tutorialParagraph3);
 		title.setTypeface(myFont);
+		p1.setTypeface(myFont);
+		p2.setTypeface(myFont);
+		p3.setTypeface(myFont);
     }
 
     @Override
