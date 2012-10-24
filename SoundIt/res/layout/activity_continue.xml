@@ -23,7 +23,7 @@
         android:gravity="center_vertical"
         android:background="@drawable/my_btn"
         
-        android:drawableLeft="@drawable/icon_temp"
+        android:drawableLeft="@drawable/icon_resend"
         android:text="@string/button_reply" 
         android:onClick="onReply"/>
 
@@ -45,7 +45,7 @@
         android:gravity="center_vertical"
         android:background="@drawable/my_btn"
         
-        android:drawableLeft="@drawable/icon_temp"
+        android:drawableLeft="@drawable/icon_end"
         android:text="@string/button_end" 
         android:onClick="onEnd"/>
 

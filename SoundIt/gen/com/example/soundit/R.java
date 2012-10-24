@@ -19,17 +19,21 @@ public final class R {
         public static final int btn_up=0x7f020005;
         public static final int ic_action_search=0x7f020006;
         public static final int ic_launcher=0x7f020007;
-        public static final int icon_guess=0x7f020008;
-        public static final int icon_replay=0x7f020009;
-        public static final int icon_send=0x7f02000a;
-        public static final int icon_start=0x7f02000b;
-        public static final int icon_temp=0x7f02000c;
-        public static final int icon_tut=0x7f02000d;
-        public static final int my_btn=0x7f02000e;
-        public static final int pu=0x7f02000f;
-        public static final int ru=0x7f020010;
-        public static final int start_btn=0x7f020011;
-        public static final int stop_btn=0x7f020012;
+        public static final int icon_end=0x7f020008;
+        public static final int icon_geo=0x7f020009;
+        public static final int icon_guess=0x7f02000a;
+        public static final int icon_replay=0x7f02000b;
+        public static final int icon_resend=0x7f02000c;
+        public static final int icon_send=0x7f02000d;
+        public static final int icon_shu=0x7f02000e;
+        public static final int icon_start=0x7f02000f;
+        public static final int icon_temp=0x7f020010;
+        public static final int icon_tut=0x7f020011;
+        public static final int my_btn=0x7f020012;
+        public static final int pu=0x7f020013;
+        public static final int ru=0x7f020014;
+        public static final int start_btn=0x7f020015;
+        public static final int stop_btn=0x7f020016;
     }
     public static final class id {
         public static final int btnEndGame=0x7f080005;

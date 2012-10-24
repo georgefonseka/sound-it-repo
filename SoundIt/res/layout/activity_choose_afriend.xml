@@ -23,7 +23,7 @@
         android:gravity="center_vertical"
         android:background="@drawable/my_btn"
         
-        android:drawableLeft="@drawable/icon_temp"
+        android:drawableLeft="@drawable/icon_geo"
         android:text="@string/sound_George" 
         android:onClick="goToGuessPage"/>
 
@@ -45,7 +45,7 @@
         android:gravity="center_vertical"
         android:background="@drawable/my_btn"
         
-        android:drawableLeft="@drawable/icon_temp"
+        android:drawableLeft="@drawable/icon_shu"
         android:text="@string/sound_Shu" 
         android:onClick="goToGuessPage"/>
     
